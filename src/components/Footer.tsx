@@ -71,7 +71,7 @@ const Footer = () => {
             <div className="mt-4">
               <Link
                 href="/contact"
-                className="inline-block bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-4 py-2 rounded-md hover:from-yellow-500 hover:to-orange-500 transition-all shadow-lg">
+                className="inline-block bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-4 py-2 rounded-md hover:from-yellow-500 hover:to-orange-500 transition-all shadow-lg"
               >
                 Get in Touch
               </Link>
