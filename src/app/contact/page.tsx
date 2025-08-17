@@ -60,19 +60,19 @@ export default function Contact() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-purple-600 py-16 lg:py-24">
+      <section className="bg-gradient-to-r from-pink-400 via-purple-500 to-blue-500 py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 drop-shadow-lg">
             Contact Us
           </h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+          <p className="text-xl text-white max-w-3xl mx-auto drop-shadow-md">
             Ready to learn more about NeNe&apos;s Daycare? We&apos;d love to hear from you and answer any questions
           </p>
         </div>
       </section>
 
       {/* Contact Form and Info */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gradient-to-b from-yellow-100 to-pink-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}

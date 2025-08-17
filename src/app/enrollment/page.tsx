@@ -10,12 +10,12 @@ export default function Enrollment() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-purple-600 to-pink-600 py-16 lg:py-24">
+      <section className="bg-gradient-to-r from-orange-400 via-pink-500 to-purple-600 py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+          <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 drop-shadow-lg">
             Enrollment Information
           </h1>
-          <p className="text-xl text-purple-100 max-w-3xl mx-auto">
+          <p className="text-xl text-white max-w-3xl mx-auto drop-shadow-md">
             Simple, straightforward enrollment process - if you need quality childcare, we&apos;re here to help
           </p>
         </div>

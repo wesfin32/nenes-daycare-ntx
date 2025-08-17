@@ -21,15 +21,15 @@ const Navigation = () => {
   const isActive = (href: string) => pathname === href;
 
   return (
-    <nav className="bg-white shadow-lg sticky top-0 z-50">
+    <nav className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="text-2xl font-bold text-blue-600">
+              <div className="text-2xl font-bold text-white drop-shadow-lg">
                 NeNe&apos;s Daycare
               </div>
-              <div className="text-sm text-gray-600 hidden sm:block">
+              <div className="text-sm text-pink-100 hidden sm:block font-medium">
                 Navasota
               </div>
             </Link>
@@ -43,8 +43,8 @@ const Navigation = () => {
                 href={item.href}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                   isActive(item.href)
-                    ? "text-blue-600 bg-blue-50"
-                    : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+                    ? "text-white bg-white/20 backdrop-blur-sm border border-white/30"
+                    : "text-white/90 hover:text-white hover:bg-white/10"
                 }`}
               >
                 {item.label}
@@ -52,7 +52,7 @@ const Navigation = () => {
             ))}
             <Link
               href="/contact"
-              className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors duration-200"
+              className="bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-4 py-2 rounded-md text-sm font-medium hover:from-yellow-500 hover:to-orange-500 transition-all duration-200 shadow-lg font-bold"
             >
               Schedule Tour
             </Link>
@@ -62,7 +62,7 @@ const Navigation = () => {
           <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 hover:text-blue-600 focus:outline-none focus:text-blue-600"
+              className="text-white hover:text-yellow-300 focus:outline-none focus:text-yellow-300"
               aria-label="Toggle menu"
             >
               <svg
@@ -87,7 +87,7 @@ const Navigation = () => {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="lg:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gradient-to-b from-pink-400 to-purple-400 border-t border-white/20">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
@@ -95,8 +95,8 @@ const Navigation = () => {
                   onClick={() => setIsOpen(false)}
                   className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
                     isActive(item.href)
-                      ? "text-blue-600 bg-blue-50"
-                      : "text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+                      ? "text-white bg-white/20 backdrop-blur-sm border border-white/30"
+                      : "text-white/90 hover:text-white hover:bg-white/10"
                   }`}
                 >
                   {item.label}
@@ -105,7 +105,7 @@ const Navigation = () => {
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
-                className="block w-full text-center bg-blue-600 text-white px-4 py-2 rounded-md text-base font-medium hover:bg-blue-700 transition-colors duration-200 mt-4"
+                className="block w-full text-center bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-4 py-2 rounded-md text-base font-medium hover:from-yellow-500 hover:to-orange-500 transition-all duration-200 mt-4 shadow-lg font-bold"
               >
                 Schedule Tour
               </Link>
