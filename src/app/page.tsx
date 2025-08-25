@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -7,6 +8,15 @@ export default function Home() {
       <section className="bg-gradient-to-br from-yellow-300 via-pink-300 to-purple-300 py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
+            <div className="flex justify-center mb-8">
+              <Image
+                src="/neneschildcarelogo.png"
+                alt="NeNe's Daycare Logo"
+                width={120}
+                height={120}
+                className="rounded-full shadow-2xl border-4 border-white/20"
+              />
+            </div>
             <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
               Trusted Childcare Since{" "}
               <span className="text-orange-400 drop-shadow-lg">2009</span>
