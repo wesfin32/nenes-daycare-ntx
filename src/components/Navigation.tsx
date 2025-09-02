@@ -25,20 +25,20 @@ const Navigation = () => {
     <nav className="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-3">
+          <div className="flex items-center min-w-0 flex-shrink-0">
+            <Link href="/" className="flex items-center space-x-2 sm:space-x-3">
               <Image
                 src="/neneschildcarelogo.png"
                 alt="NeNe's Daycare Logo"
-                width={48}
-                height={48}
-                className="rounded-full shadow-lg"
+                width={40}
+                height={40}
+                className="rounded-full shadow-lg flex-shrink-0"
               />
-              <div className="flex flex-col">
-                <div className="text-2xl font-bold text-white drop-shadow-lg">
+              <div className="flex flex-col min-w-0">
+                <div className="text-lg sm:text-xl lg:text-2xl font-bold text-white drop-shadow-lg whitespace-nowrap">
                   NeNe&apos;s Daycare
                 </div>
-                <div className="text-sm text-pink-100 hidden sm:block font-medium">
+                <div className="text-xs text-pink-100 hidden sm:block font-medium whitespace-nowrap">
                   Navasota
                 </div>
               </div>
@@ -46,7 +46,7 @@ const Navigation = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-4 xl:space-x-8 flex-shrink-0">
             {navItems.map((item) => (
               <Link
                 key={item.href}
