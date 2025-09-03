@@ -6,7 +6,6 @@ import { useState } from "react";
 
 export default function Home() {
   const [activeGallery, setActiveGallery] = useState<string | null>(null);
-  const [activeInfo, setActiveInfo] = useState<string | null>(null);
 
   // Gallery images for each activity
   const galleryImages = {
@@ -98,63 +97,111 @@ export default function Home() {
   const adventureCards = [
     {
       id: 'art',
-      title: 'Creative Art Time',
-      description: 'Our little artists explore colors, shapes, and creativity through hands-on art projects that develop fine motor skills and imagination.',
-      category: 'Art & Crafts',
-      gradient: 'from-blue-200 to-indigo-300',
-      buttonGradient: 'from-purple-500 to-pink-500',
+      title: '🎨 Creative Art Time! 🎨',
+      description: 'Our little artists create AMAZING masterpieces with colors, shapes, and sparkles! Every brushstroke is pure magic! ✨',
+      category: '🖌️ Art & Crafts Fun!',
+      gradient: 'from-pink-400 via-red-400 to-orange-500',
+      buttonGradient: 'from-yellow-400 to-orange-500',
       image: 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=600&h=400&fit=crop'
     },
     {
       id: 'science',
-      title: 'Nature Explorations',
-      description: 'Outdoor adventures and science discoveries help children learn about the world around them through interactive experiments.',
-      category: 'Science',
-      gradient: 'from-green-200 to-emerald-300',
-      buttonGradient: 'from-green-500 to-emerald-500',
+      title: '🔬 Nature Explorations! 🌿',
+      description: 'Outdoor adventures await! We discover bugs, plants, and cool science experiments that make kids go "WOW!" 🤩',
+      category: '🌱 Science Discovery!',
+      gradient: 'from-lime-400 via-green-500 to-emerald-600',
+      buttonGradient: 'from-cyan-400 to-blue-500',
       image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop'
     },
     {
       id: 'music',
-      title: 'Musical Moments',
-      description: 'Dance, sing, and play instruments! Music activities enhance rhythm, coordination, and social skills while having tons of fun.',
-      category: 'Music & Movement',
-      gradient: 'from-orange-200 to-yellow-300',
-      buttonGradient: 'from-orange-500 to-yellow-500',
+      title: '🎵 Musical Moments! 🎶',
+      description: 'Dance, sing, and make joyful noise with instruments! Every beat gets our hearts pumping and feet moving! 💃🕺',
+      category: '🎤 Music & Movement!',
+      gradient: 'from-yellow-400 via-orange-500 to-red-500',
+      buttonGradient: 'from-pink-400 to-purple-500',
       image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop'
     },
     {
       id: 'reading',
-      title: 'Story Adventures',
-      description: 'Daily reading sessions and storytelling activities foster language development and spark imagination in our young learners.',
-      category: 'Reading',
-      gradient: 'from-pink-200 to-rose-300',
-      buttonGradient: 'from-pink-500 to-rose-500',
+      title: '📚 Story Adventures! 📖',
+      description: 'Magical tales come alive! We journey to faraway lands and meet incredible characters in our cozy reading nook! 🏰✨',
+      category: '📝 Reading & Stories!',
+      gradient: 'from-purple-400 via-pink-500 to-rose-500',
+      buttonGradient: 'from-indigo-400 to-purple-500',
       image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&h=400&fit=crop'
     },
     {
       id: 'social',
-      title: 'Friendship Building',
-      description: 'Group activities and cooperative games teach sharing, teamwork, and social skills that last a lifetime.',
-      category: 'Social Play',
-      gradient: 'from-teal-200 to-cyan-300',
-      buttonGradient: 'from-teal-500 to-cyan-500',
+      title: '👫 Friendship Building! 🤝',
+      description: 'Making best friends forever! We learn to share, care, and play together in the most FUN ways possible! 💕',
+      category: '🎈 Social Play Time!',
+      gradient: 'from-cyan-400 via-teal-500 to-blue-600',
+      buttonGradient: 'from-green-400 to-teal-500',
       image: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&h=400&fit=crop'
     },
     {
       id: 'events',
-      title: 'Holiday Celebrations',
-      description: 'Seasonal parties, holiday crafts, and special themed days create magical memories throughout the year.',
-      category: 'Special Events',
-      gradient: 'from-indigo-200 to-purple-300',
-      buttonGradient: 'from-indigo-500 to-purple-500',
+      title: '🎉 Holiday Celebrations! 🎊',
+      description: 'Special days are EXTRA special here! Parties, crafts, and themed fun that create the most magical memories! 🌟',
+      category: '🎭 Special Events!',
+      gradient: 'from-indigo-400 via-purple-500 to-pink-500',
+      buttonGradient: 'from-red-400 to-pink-500',
       image: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&h=400&fit=crop'
     }
   ];
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-yellow-300 via-pink-300 to-purple-300 py-16 lg:py-24">
+      <section className="bg-gradient-to-b from-sky-300 via-sky-200 to-green-300 py-16 lg:py-24 relative overflow-hidden min-h-screen flex items-center">
+        
+        {/* Animated Sun */}
+        <div className="absolute top-8 right-8 w-20 h-20 bg-yellow-400 rounded-full animate-pulse shadow-lg">
+          <div className="absolute inset-2 bg-yellow-300 rounded-full flex items-center justify-center">
+            <div className="text-2xl">😊</div>
+          </div>
+          {/* Sun rays */}
+          <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-1 h-4 bg-yellow-400 rounded"></div>
+          <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-1 h-4 bg-yellow-400 rounded"></div>
+          <div className="absolute -left-6 top-1/2 transform -translate-y-1/2 w-4 h-1 bg-yellow-400 rounded"></div>
+          <div className="absolute -right-6 top-1/2 transform -translate-y-1/2 w-4 h-1 bg-yellow-400 rounded"></div>
+        </div>
+
+        {/* Floating Clouds */}
+        <div className="absolute top-12 left-12 w-16 h-10 bg-white rounded-full opacity-90 animate-float">
+          <div className="absolute -top-2 left-2 w-6 h-6 bg-white rounded-full"></div>
+          <div className="absolute -top-1 right-2 w-4 h-4 bg-white rounded-full"></div>
+        </div>
+        <div className="absolute top-20 left-1/3 w-20 h-12 bg-white rounded-full opacity-80 animate-float-delayed">
+          <div className="absolute -top-3 left-3 w-8 h-8 bg-white rounded-full"></div>
+          <div className="absolute -top-2 right-3 w-6 h-6 bg-white rounded-full"></div>
+        </div>
+        <div className="absolute top-16 right-1/4 w-14 h-8 bg-white rounded-full opacity-75 animate-float">
+          <div className="absolute -top-2 left-2 w-5 h-5 bg-white rounded-full"></div>
+          <div className="absolute -top-1 right-1 w-3 h-3 bg-white rounded-full"></div>
+        </div>
+
+        {/* Colorful Trees/Lollipops */}
+        <div className="absolute bottom-0 left-8 flex items-end">
+          <div className="w-3 h-16 bg-amber-600 rounded-t"></div>
+          <div className="w-12 h-12 bg-pink-400 rounded-full -ml-1.5 animate-bounce shadow-lg"></div>
+        </div>
+        <div className="absolute bottom-0 left-32 flex items-end">
+          <div className="w-3 h-20 bg-amber-600 rounded-t"></div>
+          <div className="w-14 h-14 bg-green-400 rounded-full -ml-1.5 shadow-lg"></div>
+        </div>
+        <div className="absolute bottom-0 right-12 flex items-end">
+          <div className="w-3 h-18 bg-amber-600 rounded-t"></div>
+          <div className="w-12 h-12 bg-purple-400 rounded-full -ml-1.5 shadow-lg"></div>
+        </div>
+
+        {/* Grass at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-8 bg-green-400"></div>
+        
+        {/* Flying elements */}
+        <div className="absolute top-1/4 left-20 text-2xl animate-float">🦋</div>
+        <div className="absolute top-1/3 right-32 text-2xl animate-float-delayed">🐝</div>
+        <div className="absolute bottom-1/4 right-16 text-2xl animate-float">🌸</div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="flex justify-center mb-8">
@@ -166,103 +213,179 @@ export default function Home() {
                 className="rounded-full shadow-2xl border-4 border-white/20"
               />
             </div>
-            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
-              Trusted Childcare Since{" "}
-              <span className="text-orange-400 drop-shadow-lg">2009</span>
+            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg font-comic">
+              🌟 Fun Learning Since{" "}
+              <span className="text-green-300 drop-shadow-lg animate-pulse">2009</span> 🌟
             </h1>
             <p className="text-xl lg:text-2xl text-white mb-8 max-w-3xl mx-auto drop-shadow-md">
-              Professional daycare in Navasota, Texas serving children 8 weeks to 12 years old. 
-              12-hour daily care with all meals included.
+              🎨 Where Every Day is an Adventure! 🎨<br/>
+              Serving little explorers ages 8 weeks to 12 years with 12-hour care & yummy meals! 🍎
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="bg-gradient-to-r from-green-400 to-blue-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:from-green-500 hover:to-blue-600 transition-all duration-200 shadow-lg transform hover:scale-105"
+                className="bg-gradient-to-r from-lime-400 to-green-500 text-white px-8 py-4 rounded-full text-lg font-bold hover:from-lime-500 hover:to-green-600 transition-all duration-200 shadow-2xl transform hover:scale-110 hover:rotate-1"
               >
-                Schedule a Tour Today
+                🏠 Come Visit Our Fun House! 
               </Link>
               <Link
                 href="/enrollment"
-                className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-purple-600 transition-all duration-200 shadow-lg transform hover:scale-105 backdrop-blur-sm"
+                className="bg-gradient-to-r from-blue-400 to-cyan-500 text-white px-8 py-4 rounded-full text-lg font-bold hover:from-blue-500 hover:to-cyan-600 transition-all duration-200 shadow-2xl transform hover:scale-110 hover:-rotate-1"
               >
-                Learn About Enrollment
+                🎒 Join Our Adventure Club!
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Key Features */}
-      <section className="py-16 bg-gradient-to-b from-orange-100 to-pink-100">
+      {/* Key Features - Building Blocks Style */}
+      <section className="py-16 bg-gradient-to-br from-blue-100 via-purple-50 to-pink-100 relative overflow-hidden">
+        {/* Playful floating elements */}
+        <div className="absolute top-10 left-10 w-12 h-12 bg-yellow-300 rounded-2xl transform rotate-12 animate-float opacity-70"></div>
+        <div className="absolute top-32 right-16 w-8 h-8 bg-green-300 rounded-full animate-float-delayed opacity-70"></div>
+        <div className="absolute bottom-20 left-1/4 w-10 h-10 bg-pink-300 transform rotate-45 animate-float opacity-70"></div>
+        <div className="absolute bottom-10 right-10 w-6 h-12 bg-blue-300 rounded-full animate-float-delayed opacity-70"></div>
+        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-purple-800 mb-4">
-              Why Choose NeNe&apos;s Daycare?
+          <div className="text-center mb-16">
+            <div className="inline-block bg-white rounded-full p-4 shadow-lg mb-6">
+              <div className="text-6xl animate-bounce">🏠</div>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-purple-800 mb-6">
+              🌈 Why Our Daycare is AMAZING! 🌈
             </h2>
-            <p className="text-xl text-purple-700 max-w-2xl mx-auto">
-              Over 14 years of dedicated service to Navasota families
+            <p className="text-2xl text-pink-700 max-w-3xl mx-auto font-bold">
+              ⭐ 14+ Years of Making Kids Happy & Parents Proud! ⭐
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="text-center p-6 rounded-lg bg-gradient-to-br from-blue-200 to-cyan-200 shadow-lg transform hover:scale-105 transition-all duration-200">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+          {/* Building Blocks Layout */}
+          <div className="space-y-8">
+            {/* Row 1 - 3 LEGO blocks */}
+            <div className="flex flex-wrap justify-center gap-6">
+              {/* LEGO Block 1 - Red */}
+              <div className="relative bg-red-500 p-8 shadow-2xl transform hover:scale-105 transition-all duration-300 w-80 h-80" style={{borderRadius: '8px'}}>
+                {/* LEGO studs - 3x3 pattern (9 studs) */}
+                <div className="absolute inset-0 p-6 flex items-center justify-center" style={{zIndex: 1}}>
+                  <div className="grid grid-cols-3 gap-8 w-full h-full">
+                    {[...Array(9)].map((_, i) => (
+                      <div key={i} className="w-12 h-12 bg-red-400 rounded-full border-2 border-red-600 mx-auto" style={{boxShadow: 'inset -2px -2px 4px rgba(0,0,0,0.3), inset 2px 2px 4px rgba(255,255,255,0.4)'}}></div>
+                    ))}
+                  </div>
+                </div>
+                {/* Content on top */}
+                <div className="relative text-center flex flex-col justify-center h-full" style={{zIndex: 2}}>
+                  <div className="w-20 h-20 bg-white bg-opacity-95 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <div className="text-3xl">⏰</div>
+                  </div>
+                  <h3 className="text-xl font-bold text-white drop-shadow-lg mb-3">12-Hour Fun Time!</h3>
+                  <p className="text-white font-semibold drop-shadow-md">All day adventures for busy families!</p>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-purple-800 mb-2">12-Hour Daily Care</h3>
-              <p className="text-purple-700">Extended hours to support working families with flexible schedules</p>
+              
+              {/* LEGO Block 2 - Green */}
+              <div className="relative bg-green-500 p-8 shadow-2xl transform hover:scale-105 transition-all duration-300 w-80 h-80" style={{borderRadius: '8px'}}>
+                {/* LEGO studs - 3x3 pattern (9 studs) */}
+                <div className="absolute inset-0 p-6 flex items-center justify-center" style={{zIndex: 1}}>
+                  <div className="grid grid-cols-3 gap-8 w-full h-full">
+                    {[...Array(9)].map((_, i) => (
+                      <div key={i} className="w-12 h-12 bg-green-400 rounded-full border-2 border-green-600 mx-auto" style={{boxShadow: 'inset -2px -2px 4px rgba(0,0,0,0.3), inset 2px 2px 4px rgba(255,255,255,0.4)'}}></div>
+                    ))}
+                  </div>
+                </div>
+                {/* Content on top */}
+                <div className="relative text-center flex flex-col justify-center h-full" style={{zIndex: 2}}>
+                  <div className="w-20 h-20 bg-white bg-opacity-95 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <div className="text-3xl">🍎</div>
+                  </div>
+                  <h3 className="text-xl font-bold text-white drop-shadow-lg mb-3">Yummy Meals!</h3>
+                  <p className="text-white font-semibold drop-shadow-md">Tasty breakfast, lunch & snacks included!</p>
+                </div>
+              </div>
+              
+              {/* LEGO Block 3 - Blue */}
+              <div className="relative bg-blue-500 p-8 shadow-2xl transform hover:scale-105 transition-all duration-300 w-80 h-80" style={{borderRadius: '8px'}}>
+                {/* LEGO studs - 3x3 pattern (9 studs) */}
+                <div className="absolute inset-0 p-6 flex items-center justify-center" style={{zIndex: 1}}>
+                  <div className="grid grid-cols-3 gap-8 w-full h-full">
+                    {[...Array(9)].map((_, i) => (
+                      <div key={i} className="w-12 h-12 bg-blue-400 rounded-full border-2 border-blue-600 mx-auto" style={{boxShadow: 'inset -2px -2px 4px rgba(0,0,0,0.3), inset 2px 2px 4px rgba(255,255,255,0.4)'}}></div>
+                    ))}
+                  </div>
+                </div>
+                {/* Content on top */}
+                <div className="relative text-center flex flex-col justify-center h-full" style={{zIndex: 2}}>
+                  <div className="w-20 h-20 bg-white bg-opacity-95 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <div className="text-3xl">👥</div>
+                  </div>
+                  <h3 className="text-xl font-bold text-white drop-shadow-lg mb-3">Super Team!</h3>
+                  <p className="text-white font-semibold drop-shadow-md">Amazing teachers working together!</p>
+                </div>
+              </div>
             </div>
-
-            <div className="text-center p-6 rounded-lg bg-gradient-to-br from-green-200 to-emerald-200 shadow-lg transform hover:scale-105 transition-all duration-200">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2 2m2-2v6a2 2 0 002 2h2a2 2 0 002-2v-6" />
-                </svg>
+            
+            {/* Row 2 - 3 LEGO blocks offset */}
+            <div className="flex flex-wrap justify-center gap-6">
+              {/* LEGO Block 4 - Yellow */}
+              <div className="relative bg-yellow-500 p-8 shadow-2xl transform hover:scale-105 transition-all duration-300 w-80 h-80" style={{borderRadius: '8px'}}>
+                {/* LEGO studs - 3x3 pattern (9 studs) */}
+                <div className="absolute inset-0 p-6 flex items-center justify-center" style={{zIndex: 1}}>
+                  <div className="grid grid-cols-3 gap-8 w-full h-full">
+                    {[...Array(9)].map((_, i) => (
+                      <div key={i} className="w-12 h-12 bg-yellow-400 rounded-full border-2 border-yellow-600 mx-auto" style={{boxShadow: 'inset -2px -2px 4px rgba(0,0,0,0.3), inset 2px 2px 4px rgba(255,255,255,0.4)'}}></div>
+                    ))}
+                  </div>
+                </div>
+                {/* Content on top */}
+                <div className="relative text-center flex flex-col justify-center h-full" style={{zIndex: 2}}>
+                  <div className="w-20 h-20 bg-white bg-opacity-95 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <div className="text-3xl">💝</div>
+                  </div>
+                  <h3 className="text-xl font-bold text-white drop-shadow-lg mb-3">Help Available!</h3>
+                  <p className="text-white font-semibold drop-shadow-md">We work with assistance programs!</p>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-green-800 mb-2">All Meals Included</h3>
-              <p className="text-green-700">Nutritious breakfast, lunch, and snacks at no additional cost</p>
-            </div>
-
-            <div className="text-center p-6 rounded-lg bg-gradient-to-br from-orange-200 to-yellow-200 shadow-lg transform hover:scale-105 transition-all duration-200">
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
+              
+              {/* LEGO Block 5 - Orange */}
+              <div className="relative bg-orange-500 p-8 shadow-2xl transform hover:scale-105 transition-all duration-300 w-80 h-80" style={{borderRadius: '8px'}}>
+                {/* LEGO studs - 3x3 pattern (9 studs) */}
+                <div className="absolute inset-0 p-6 flex items-center justify-center" style={{zIndex: 1}}>
+                  <div className="grid grid-cols-3 gap-8 w-full h-full">
+                    {[...Array(9)].map((_, i) => (
+                      <div key={i} className="w-12 h-12 bg-orange-400 rounded-full border-2 border-orange-600 mx-auto" style={{boxShadow: 'inset -2px -2px 4px rgba(0,0,0,0.3), inset 2px 2px 4px rgba(255,255,255,0.4)'}}></div>
+                    ))}
+                  </div>
+                </div>
+                {/* Content on top */}
+                <div className="relative text-center flex flex-col justify-center h-full" style={{zIndex: 2}}>
+                  <div className="w-20 h-20 bg-white bg-opacity-95 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <div className="text-3xl">👶</div>
+                  </div>
+                  <h3 className="text-xl font-bold text-white drop-shadow-lg mb-3">All Ages Welcome!</h3>
+                  <p className="text-white font-semibold drop-shadow-md">From tiny babies to big kids!</p>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-orange-800 mb-2">Team-Based Approach</h3>
-              <p className="text-orange-700">Collaborative care with strong parent partnership and communication</p>
-            </div>
-
-            <div className="text-center p-6 rounded-lg bg-gradient-to-br from-purple-200 to-pink-200 shadow-lg transform hover:scale-105 transition-all duration-200">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+              
+              {/* LEGO Block 6 - Purple */}
+              <div className="relative bg-purple-500 p-8 shadow-2xl transform hover:scale-105 transition-all duration-300 w-80 h-80" style={{borderRadius: '8px'}}>
+                {/* LEGO studs - 3x3 pattern (9 studs) */}
+                <div className="absolute inset-0 p-6 flex items-center justify-center" style={{zIndex: 1}}>
+                  <div className="grid grid-cols-3 gap-8 w-full h-full">
+                    {[...Array(9)].map((_, i) => (
+                      <div key={i} className="w-12 h-12 bg-purple-400 rounded-full border-2 border-purple-600 mx-auto" style={{boxShadow: 'inset -2px -2px 4px rgba(0,0,0,0.3), inset 2px 2px 4px rgba(255,255,255,0.4)'}}></div>
+                    ))}
+                  </div>
+                </div>
+                {/* Content on top */}
+                <div className="relative text-center flex flex-col justify-center h-full" style={{zIndex: 2}}>
+                  <div className="w-20 h-20 bg-white bg-opacity-95 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <div className="text-3xl">🌟</div>
+                  </div>
+                  <h3 className="text-xl font-bold text-white drop-shadow-lg mb-3">Easy Join!</h3>
+                  <p className="text-white font-semibold drop-shadow-md">Simple sign-up process!</p>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-purple-800 mb-2">Government Assistance</h3>
-              <p className="text-purple-700">We accept CCAP, Head Start, and work with Texas Workforce programs</p>
-            </div>
-
-            <div className="text-center p-6 rounded-lg bg-gradient-to-br from-teal-200 to-cyan-200 shadow-lg transform hover:scale-105 transition-all duration-200">
-              <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-teal-800 mb-2">Ages 8 Weeks - 12 Years</h3>
-              <p className="text-teal-700">Comprehensive care from infants through school-age children</p>
-            </div>
-
-            <div className="text-center p-6 rounded-lg bg-gradient-to-br from-red-200 to-pink-200 shadow-lg transform hover:scale-105 transition-all duration-200">
-              <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-red-800 mb-2">No Enrollment Criteria</h3>
-              <p className="text-red-700">Simple enrollment process - just need quality childcare for your family</p>
             </div>
           </div>
         </div>
@@ -271,18 +394,25 @@ export default function Home() {
       {/* Fun & Learning Adventures - Scroll Triggered Stacking */}
       <section className="relative">
         {/* Section Header */}
-        <div className="relative z-10 bg-gradient-to-br from-yellow-50 via-pink-50 to-purple-50 py-16">
+        <div className="relative z-10 bg-gradient-to-br from-cyan-300 via-blue-300 to-purple-400 py-16 overflow-hidden">
+          {/* Scattered fun elements */}
+          <div className="absolute top-5 left-10 w-6 h-6 bg-yellow-400 rounded-full"></div>
+          <div className="absolute top-20 right-20 w-8 h-8 bg-pink-400 transform rotate-45"></div>
+          <div className="absolute bottom-10 left-1/4 w-4 h-4 bg-green-400 rounded-full"></div>
+          <div className="absolute bottom-20 right-1/3 w-10 h-10 bg-red-400 transform rotate-12"></div>
+          
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mb-4 shadow-lg">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.01M15 10h1.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-r from-orange-400 to-red-500 rounded-full mb-6 shadow-2xl animate-bounce">
+              <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.01M15 10h1.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-purple-800 mb-4">
-              Fun & Learning Adventures
+            <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6 drop-shadow-2xl">
+              🎨 Fun & Learning Adventures! 🎨
             </h2>
-            <p className="text-xl text-purple-700 max-w-3xl mx-auto">
-              Discover the exciting activities and educational experiences that make every day special at NeNe&apos;s Daycare! [UPDATED]
+            <p className="text-2xl text-white max-w-4xl mx-auto font-bold drop-shadow-lg">
+              🌟 Every Day is Full of Amazing Discoveries & Giggles! 🌟<br/>
+              Come See What Awesome Things We Do! 🚀
             </p>
           </div>
         </div>
@@ -317,18 +447,12 @@ export default function Home() {
                         {card.description}
                       </p>
                       
-                      <div className="flex flex-col sm:flex-row gap-4">
+                      <div className="flex justify-center">
                         <button 
                           onClick={() => setActiveGallery(card.id)}
-                          className={`bg-gradient-to-r ${card.buttonGradient} text-white px-8 py-4 rounded-xl text-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200`}
+                          className={`bg-gradient-to-r ${card.buttonGradient} text-white px-12 py-4 rounded-xl text-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200`}
                         >
                           View Gallery
-                        </button>
-                        <button 
-                          onClick={() => setActiveInfo(card.id)}
-                          className="border-2 border-white text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-white hover:text-gray-800 transition-all duration-200 backdrop-blur-sm"
-                        >
-                          Learn More
                         </button>
                       </div>
                     </div>
@@ -362,8 +486,8 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Bottom Spacer */}
-        <div className="h-screen bg-gradient-to-br from-purple-50 to-pink-50 flex items-center justify-center">
+        {/* Bottom Button Section */}
+        <div className="bg-gradient-to-br from-purple-50 to-pink-50 py-16">
           <div className="text-center">
             <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-12 py-6 rounded-full text-xl font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-200 shadow-xl transform hover:scale-105 inline-flex items-center gap-3">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -500,146 +624,6 @@ export default function Home() {
         </div>
       )}
 
-      {/* Learn More Info Popup Modal */}
-      {activeInfo && (
-        <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
-          <div className="bg-gradient-to-br from-purple-50 via-pink-50 to-yellow-50 rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
-            {/* Modal Header */}
-            <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-6 text-white relative">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-2xl lg:text-3xl font-bold">
-                    {adventureCards.find(card => card.id === activeInfo)?.title}
-                  </h3>
-                  <p className="text-purple-100 mt-1">
-                    Activity Details & Information
-                  </p>
-                </div>
-                <button
-                  onClick={() => setActiveInfo(null)}
-                  className="bg-red-500 hover:bg-red-600 text-white rounded-full p-3 transition-all duration-200 shadow-lg"
-                >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
-              
-              {/* Decorative elements */}
-              <div className="absolute top-4 right-20 w-8 h-8 bg-white bg-opacity-10 rounded-full"></div>
-              <div className="absolute bottom-4 right-32 w-6 h-6 bg-white bg-opacity-10 rounded-full"></div>
-            </div>
-
-            {/* Modal Content */}
-            <div className="p-8 overflow-y-auto max-h-[calc(90vh-140px)]">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                {/* Left Column */}
-                <div className="space-y-6">
-                  {/* Age Groups */}
-                  <div className="bg-white bg-opacity-60 rounded-2xl p-6 backdrop-blur-sm">
-                    <h4 className="text-xl font-bold text-purple-800 mb-4 flex items-center">
-                      <svg className="w-6 h-6 mr-2 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
-                      </svg>
-                      Age Groups
-                    </h4>
-                    <ul className="space-y-2">
-                      {activityInfo[activeInfo as keyof typeof activityInfo]?.ageGroups.map((age, index) => (
-                        <li key={index} className="flex items-center text-gray-700">
-                          <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
-                          {age}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Benefits */}
-                  <div className="bg-white bg-opacity-60 rounded-2xl p-6 backdrop-blur-sm">
-                    <h4 className="text-xl font-bold text-purple-800 mb-4 flex items-center">
-                      <svg className="w-6 h-6 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      Benefits
-                    </h4>
-                    <ul className="space-y-2">
-                      {activityInfo[activeInfo as keyof typeof activityInfo]?.benefits.map((benefit, index) => (
-                        <li key={index} className="flex items-center text-gray-700">
-                          <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                          {benefit}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                {/* Right Column */}
-                <div className="space-y-6">
-                  {/* Activities */}
-                  <div className="bg-white bg-opacity-60 rounded-2xl p-6 backdrop-blur-sm">
-                    <h4 className="text-xl font-bold text-purple-800 mb-4 flex items-center">
-                      <svg className="w-6 h-6 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                      </svg>
-                      Activities Include
-                    </h4>
-                    <ul className="space-y-2">
-                      {activityInfo[activeInfo as keyof typeof activityInfo]?.activities.map((activity, index) => (
-                        <li key={index} className="flex items-center text-gray-700">
-                          <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                          {activity}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Schedule & Materials */}
-                  <div className="space-y-4">
-                    <div className="bg-white bg-opacity-60 rounded-2xl p-6 backdrop-blur-sm">
-                      <h4 className="text-xl font-bold text-purple-800 mb-3 flex items-center">
-                        <svg className="w-6 h-6 mr-2 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        Schedule
-                      </h4>
-                      <p className="text-gray-700">
-                        {activityInfo[activeInfo as keyof typeof activityInfo]?.schedule}
-                      </p>
-                    </div>
-
-                    <div className="bg-white bg-opacity-60 rounded-2xl p-6 backdrop-blur-sm">
-                      <h4 className="text-xl font-bold text-purple-800 mb-3 flex items-center">
-                        <svg className="w-6 h-6 mr-2 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                        </svg>
-                        Materials
-                      </h4>
-                      <p className="text-gray-700">
-                        {activityInfo[activeInfo as keyof typeof activityInfo]?.materials}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Modal Footer */}
-            <div className="bg-gradient-to-r from-purple-100 to-pink-100 p-4 border-t border-purple-200">
-              <div className="flex justify-between items-center">
-                <div className="text-sm text-purple-600">
-                  Part of our comprehensive childcare program
-                </div>
-                <button
-                  onClick={() => setActiveInfo(null)}
-                  className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full text-sm font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-200"
-                >
-                  Close Info
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
