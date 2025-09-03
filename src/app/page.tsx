@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function Home() {
   const [activeGallery, setActiveGallery] = useState<string | null>(null);
@@ -282,7 +282,7 @@ export default function Home() {
               Fun & Learning Adventures
             </h2>
             <p className="text-xl text-purple-700 max-w-3xl mx-auto">
-              Discover the exciting activities and educational experiences that make every day special at NeNe's Daycare! [UPDATED]
+              Discover the exciting activities and educational experiences that make every day special at NeNe&apos;s Daycare! [UPDATED]
             </p>
           </div>
         </div>
