@@ -6,6 +6,7 @@ import { useState } from "react";
 
 export default function Home() {
   const [activeGallery, setActiveGallery] = useState<string | null>(null);
+  const [showAllAdventures, setShowAllAdventures] = useState(false);
 
   // Gallery images for each activity
   const galleryImages = {
@@ -139,21 +140,99 @@ export default function Home() {
       gradient: 'from-cyan-400 via-teal-500 to-blue-600',
       buttonGradient: 'from-green-400 to-teal-500',
       image: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&h=400&fit=crop'
+    }
+  ];
+
+  // All adventures including additional ones for the modal
+  const allAdventures = [
+    // Main 6 adventures (same as adventureCards but with simpler structure for modal)
+    {
+      id: 'art',
+      name: '🎨 Creative Art Time',
+      image: 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=400&h=300&fit=crop'
+    },
+    {
+      id: 'science',
+      name: '🔬 Nature Explorations',
+      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop'
+    },
+    {
+      id: 'music',
+      name: '🎵 Musical Moments',
+      image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop'
+    },
+    {
+      id: 'reading',
+      name: '📚 Story Adventures',
+      image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop'
+    },
+    {
+      id: 'social',
+      name: '👫 Friendship Building',
+      image: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400&h=300&fit=crop'
     },
     {
       id: 'events',
-      title: '🎉 Holiday Celebrations! 🎊',
-      description: 'Special days are EXTRA special here! Parties, crafts, and themed fun that create the most magical memories! 🌟',
-      category: '🎭 Special Events!',
-      gradient: 'from-indigo-400 via-purple-500 to-pink-500',
-      buttonGradient: 'from-red-400 to-pink-500',
-      image: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&h=400&fit=crop'
+      name: '🎉 Holiday Celebrations',
+      image: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=400&h=300&fit=crop'
+    },
+    // Additional adventures that can be easily expanded
+    {
+      id: 'cooking',
+      name: '👩‍🍳 Little Chefs Kitchen',
+      image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop'
+    },
+    {
+      id: 'gardening',
+      name: '🌱 Garden Adventures',
+      image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&h=300&fit=crop'
+    },
+    {
+      id: 'sports',
+      name: '⚽ Active Play Time',
+      image: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=300&fit=crop'
+    },
+    {
+      id: 'building',
+      name: '🏗️ Block Building Fun',
+      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop'
+    },
+    {
+      id: 'water',
+      name: '💧 Water Play Days',
+      image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop'
+    },
+    {
+      id: 'theater',
+      name: '🎭 Drama & Theater',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop'
+    },
+    {
+      id: 'yoga',
+      name: '🧘‍♀️ Mindful Moments',
+      image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=300&fit=crop'
+    },
+    {
+      id: 'tech',
+      name: '💻 Tech Exploration',
+      image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=300&fit=crop'
+    },
+    {
+      id: 'dance',
+      name: '💃 Dance Party Time',
+      image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop'
+    },
+    {
+      id: 'pets',
+      name: '🐾 Animal Friends Visit',
+      image: 'https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=400&h=300&fit=crop'
     }
   ];
+
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-sky-300 via-sky-200 to-green-300 py-16 lg:py-24 relative overflow-hidden min-h-screen flex items-center">
+      <section className="bg-gradient-to-b from-sky-300 via-sky-200 to-green-300 py-8 lg:py-12 relative overflow-hidden min-h-screen flex items-center">
         
         {/* Animated Sun */}
         <div className="absolute top-8 right-8 w-20 h-20 bg-yellow-400 rounded-full animate-pulse shadow-lg">
@@ -265,12 +344,12 @@ export default function Home() {
             {/* Row 1 - 3 LEGO blocks */}
             <div className="flex flex-wrap justify-center gap-6">
               {/* LEGO Block 1 - Red */}
-              <div className="relative bg-red-500 p-8 shadow-2xl transform hover:scale-105 transition-all duration-300 w-80 h-80" style={{borderRadius: '8px'}}>
+              <div className="relative bg-red-500 p-8 shadow-2xl transform hover:scale-105 transition-all duration-300 w-80 h-80" style={{borderRadius: '12px', boxShadow: 'inset -4px -4px 8px rgba(0,0,0,0.2), inset 4px 4px 8px rgba(255,255,255,0.2), 0 8px 16px rgba(0,0,0,0.3)'}}>
                 {/* LEGO studs - 3x3 pattern (9 studs) */}
-                <div className="absolute inset-0 p-6 flex items-center justify-center" style={{zIndex: 1}}>
-                  <div className="grid grid-cols-3 gap-8 w-full h-full">
+                <div className="absolute inset-0 p-4 flex items-center justify-center" style={{zIndex: 1}}>
+                  <div className="grid grid-cols-3 gap-3 w-full h-full">
                     {[...Array(9)].map((_, i) => (
-                      <div key={i} className="w-12 h-12 bg-red-400 rounded-full border-2 border-red-600 mx-auto" style={{boxShadow: 'inset -2px -2px 4px rgba(0,0,0,0.3), inset 2px 2px 4px rgba(255,255,255,0.4)'}}></div>
+                      <div key={i} className="w-16 h-16 bg-red-400 rounded-full border-2 border-red-600 mx-auto" style={{boxShadow: 'inset -3px -3px 6px rgba(0,0,0,0.4), inset 3px 3px 6px rgba(255,255,255,0.5), 0 2px 4px rgba(0,0,0,0.2)'}}></div>
                     ))}
                   </div>
                 </div>
@@ -285,12 +364,12 @@ export default function Home() {
               </div>
               
               {/* LEGO Block 2 - Green */}
-              <div className="relative bg-green-500 p-8 shadow-2xl transform hover:scale-105 transition-all duration-300 w-80 h-80" style={{borderRadius: '8px'}}>
+              <div className="relative bg-green-500 p-8 shadow-2xl transform hover:scale-105 transition-all duration-300 w-80 h-80" style={{borderRadius: '12px', boxShadow: 'inset -4px -4px 8px rgba(0,0,0,0.2), inset 4px 4px 8px rgba(255,255,255,0.2), 0 8px 16px rgba(0,0,0,0.3)'}}>
                 {/* LEGO studs - 3x3 pattern (9 studs) */}
-                <div className="absolute inset-0 p-6 flex items-center justify-center" style={{zIndex: 1}}>
-                  <div className="grid grid-cols-3 gap-8 w-full h-full">
+                <div className="absolute inset-0 p-4 flex items-center justify-center" style={{zIndex: 1}}>
+                  <div className="grid grid-cols-3 gap-3 w-full h-full">
                     {[...Array(9)].map((_, i) => (
-                      <div key={i} className="w-12 h-12 bg-green-400 rounded-full border-2 border-green-600 mx-auto" style={{boxShadow: 'inset -2px -2px 4px rgba(0,0,0,0.3), inset 2px 2px 4px rgba(255,255,255,0.4)'}}></div>
+                      <div key={i} className="w-16 h-16 bg-green-400 rounded-full border-2 border-green-600 mx-auto" style={{boxShadow: 'inset -3px -3px 6px rgba(0,0,0,0.4), inset 3px 3px 6px rgba(255,255,255,0.5), 0 2px 4px rgba(0,0,0,0.2)'}}></div>
                     ))}
                   </div>
                 </div>
@@ -305,12 +384,12 @@ export default function Home() {
               </div>
               
               {/* LEGO Block 3 - Blue */}
-              <div className="relative bg-blue-500 p-8 shadow-2xl transform hover:scale-105 transition-all duration-300 w-80 h-80" style={{borderRadius: '8px'}}>
+              <div className="relative bg-blue-500 p-8 shadow-2xl transform hover:scale-105 transition-all duration-300 w-80 h-80" style={{borderRadius: '12px', boxShadow: 'inset -4px -4px 8px rgba(0,0,0,0.2), inset 4px 4px 8px rgba(255,255,255,0.2), 0 8px 16px rgba(0,0,0,0.3)'}}>
                 {/* LEGO studs - 3x3 pattern (9 studs) */}
-                <div className="absolute inset-0 p-6 flex items-center justify-center" style={{zIndex: 1}}>
-                  <div className="grid grid-cols-3 gap-8 w-full h-full">
+                <div className="absolute inset-0 p-4 flex items-center justify-center" style={{zIndex: 1}}>
+                  <div className="grid grid-cols-3 gap-3 w-full h-full">
                     {[...Array(9)].map((_, i) => (
-                      <div key={i} className="w-12 h-12 bg-blue-400 rounded-full border-2 border-blue-600 mx-auto" style={{boxShadow: 'inset -2px -2px 4px rgba(0,0,0,0.3), inset 2px 2px 4px rgba(255,255,255,0.4)'}}></div>
+                      <div key={i} className="w-16 h-16 bg-blue-400 rounded-full border-2 border-blue-600 mx-auto" style={{boxShadow: 'inset -3px -3px 6px rgba(0,0,0,0.4), inset 3px 3px 6px rgba(255,255,255,0.5), 0 2px 4px rgba(0,0,0,0.2)'}}></div>
                     ))}
                   </div>
                 </div>
@@ -328,12 +407,12 @@ export default function Home() {
             {/* Row 2 - 3 LEGO blocks offset */}
             <div className="flex flex-wrap justify-center gap-6">
               {/* LEGO Block 4 - Yellow */}
-              <div className="relative bg-yellow-500 p-8 shadow-2xl transform hover:scale-105 transition-all duration-300 w-80 h-80" style={{borderRadius: '8px'}}>
+              <div className="relative bg-yellow-500 p-8 shadow-2xl transform hover:scale-105 transition-all duration-300 w-80 h-80" style={{borderRadius: '12px', boxShadow: 'inset -4px -4px 8px rgba(0,0,0,0.2), inset 4px 4px 8px rgba(255,255,255,0.2), 0 8px 16px rgba(0,0,0,0.3)'}}>
                 {/* LEGO studs - 3x3 pattern (9 studs) */}
-                <div className="absolute inset-0 p-6 flex items-center justify-center" style={{zIndex: 1}}>
-                  <div className="grid grid-cols-3 gap-8 w-full h-full">
+                <div className="absolute inset-0 p-4 flex items-center justify-center" style={{zIndex: 1}}>
+                  <div className="grid grid-cols-3 gap-3 w-full h-full">
                     {[...Array(9)].map((_, i) => (
-                      <div key={i} className="w-12 h-12 bg-yellow-400 rounded-full border-2 border-yellow-600 mx-auto" style={{boxShadow: 'inset -2px -2px 4px rgba(0,0,0,0.3), inset 2px 2px 4px rgba(255,255,255,0.4)'}}></div>
+                      <div key={i} className="w-16 h-16 bg-yellow-400 rounded-full border-2 border-yellow-600 mx-auto" style={{boxShadow: 'inset -3px -3px 6px rgba(0,0,0,0.4), inset 3px 3px 6px rgba(255,255,255,0.5), 0 2px 4px rgba(0,0,0,0.2)'}}></div>
                     ))}
                   </div>
                 </div>
@@ -348,12 +427,12 @@ export default function Home() {
               </div>
               
               {/* LEGO Block 5 - Orange */}
-              <div className="relative bg-orange-500 p-8 shadow-2xl transform hover:scale-105 transition-all duration-300 w-80 h-80" style={{borderRadius: '8px'}}>
+              <div className="relative bg-orange-500 p-8 shadow-2xl transform hover:scale-105 transition-all duration-300 w-80 h-80" style={{borderRadius: '12px', boxShadow: 'inset -4px -4px 8px rgba(0,0,0,0.2), inset 4px 4px 8px rgba(255,255,255,0.2), 0 8px 16px rgba(0,0,0,0.3)'}}>
                 {/* LEGO studs - 3x3 pattern (9 studs) */}
-                <div className="absolute inset-0 p-6 flex items-center justify-center" style={{zIndex: 1}}>
-                  <div className="grid grid-cols-3 gap-8 w-full h-full">
+                <div className="absolute inset-0 p-4 flex items-center justify-center" style={{zIndex: 1}}>
+                  <div className="grid grid-cols-3 gap-3 w-full h-full">
                     {[...Array(9)].map((_, i) => (
-                      <div key={i} className="w-12 h-12 bg-orange-400 rounded-full border-2 border-orange-600 mx-auto" style={{boxShadow: 'inset -2px -2px 4px rgba(0,0,0,0.3), inset 2px 2px 4px rgba(255,255,255,0.4)'}}></div>
+                      <div key={i} className="w-16 h-16 bg-orange-400 rounded-full border-2 border-orange-600 mx-auto" style={{boxShadow: 'inset -3px -3px 6px rgba(0,0,0,0.4), inset 3px 3px 6px rgba(255,255,255,0.5), 0 2px 4px rgba(0,0,0,0.2)'}}></div>
                     ))}
                   </div>
                 </div>
@@ -368,12 +447,12 @@ export default function Home() {
               </div>
               
               {/* LEGO Block 6 - Purple */}
-              <div className="relative bg-purple-500 p-8 shadow-2xl transform hover:scale-105 transition-all duration-300 w-80 h-80" style={{borderRadius: '8px'}}>
+              <div className="relative bg-purple-500 p-8 shadow-2xl transform hover:scale-105 transition-all duration-300 w-80 h-80" style={{borderRadius: '12px', boxShadow: 'inset -4px -4px 8px rgba(0,0,0,0.2), inset 4px 4px 8px rgba(255,255,255,0.2), 0 8px 16px rgba(0,0,0,0.3)'}}>
                 {/* LEGO studs - 3x3 pattern (9 studs) */}
-                <div className="absolute inset-0 p-6 flex items-center justify-center" style={{zIndex: 1}}>
-                  <div className="grid grid-cols-3 gap-8 w-full h-full">
+                <div className="absolute inset-0 p-4 flex items-center justify-center" style={{zIndex: 1}}>
+                  <div className="grid grid-cols-3 gap-3 w-full h-full">
                     {[...Array(9)].map((_, i) => (
-                      <div key={i} className="w-12 h-12 bg-purple-400 rounded-full border-2 border-purple-600 mx-auto" style={{boxShadow: 'inset -2px -2px 4px rgba(0,0,0,0.3), inset 2px 2px 4px rgba(255,255,255,0.4)'}}></div>
+                      <div key={i} className="w-16 h-16 bg-purple-400 rounded-full border-2 border-purple-600 mx-auto" style={{boxShadow: 'inset -3px -3px 6px rgba(0,0,0,0.4), inset 3px 3px 6px rgba(255,255,255,0.5), 0 2px 4px rgba(0,0,0,0.2)'}}></div>
                     ))}
                   </div>
                 </div>
@@ -447,7 +526,7 @@ export default function Home() {
                         {card.description}
                       </p>
                       
-                      <div className="flex justify-center">
+                      <div className="flex justify-start">
                         <button 
                           onClick={() => setActiveGallery(card.id)}
                           className={`bg-gradient-to-r ${card.buttonGradient} text-white px-12 py-4 rounded-xl text-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200`}
@@ -489,7 +568,9 @@ export default function Home() {
         {/* Bottom Button Section */}
         <div className="bg-gradient-to-br from-purple-50 to-pink-50 py-16">
           <div className="text-center">
-            <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-12 py-6 rounded-full text-xl font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-200 shadow-xl transform hover:scale-105 inline-flex items-center gap-3">
+            <button 
+              onClick={() => setShowAllAdventures(true)}
+              className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-12 py-6 rounded-full text-xl font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-200 shadow-xl transform hover:scale-105 inline-flex items-center gap-3">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -617,6 +698,74 @@ export default function Home() {
                   className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full text-sm font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-200"
                 >
                   Close Gallery
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* All Adventures Modal */}
+      {showAllAdventures && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl max-w-6xl max-h-[90vh] w-full overflow-hidden shadow-2xl">
+            {/* Modal Header */}
+            <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-6">
+              <div className="flex justify-between items-center">
+                <div>
+                  <h2 className="text-3xl font-bold mb-2">🌟 All Our Amazing Adventures! 🌟</h2>
+                  <p className="text-lg opacity-90">Discover all the fun activities we offer at NeNe's Daycare!</p>
+                </div>
+                <button
+                  onClick={() => setShowAllAdventures(false)}
+                  className="bg-red-500 hover:bg-red-600 text-white rounded-full p-3 transition-all duration-200 shadow-lg"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            {/* Adventures Grid */}
+            <div className="overflow-y-auto max-h-[calc(90vh-120px)] p-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {allAdventures.map((adventure, index) => (
+                  <div
+                    key={adventure.id}
+                    className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-purple-300"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <div className="relative h-40 overflow-hidden">
+                      <Image
+                        src={adventure.image}
+                        alt={adventure.name}
+                        fill
+                        className="object-cover hover:scale-110 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    </div>
+                    <div className="p-4">
+                      <h3 className="text-lg font-bold text-purple-800 text-center leading-tight">
+                        {adventure.name}
+                      </h3>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Modal Footer */}
+            <div className="bg-gradient-to-r from-purple-100 to-pink-100 p-4 border-t border-purple-200">
+              <div className="flex justify-between items-center">
+                <div className="text-sm text-purple-600">
+                  {allAdventures.length} amazing adventures available!
+                </div>
+                <button
+                  onClick={() => setShowAllAdventures(false)}
+                  className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full text-sm font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-200"
+                >
+                  Close
                 </button>
               </div>
             </div>
