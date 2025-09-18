@@ -93,7 +93,7 @@ export default function About() {
                   <h3 className="text-2xl font-bold text-purple-800">Our Community Love</h3>
                 </div>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  For over 16 amazing years, we've been trusted partners to Navasota families! 
+                  For over 16 amazing years, we&apos;ve been trusted partners to Navasota families! 
                   With 85% of our families using government assistance programs, we&apos;re committed 
                   to supporting ALL families, no matter their background. Everyone deserves amazing childcare! 🏆
                 </p>
@@ -343,7 +343,7 @@ export default function About() {
                   <div className="text-6xl mb-6 group-hover:animate-bounce">🌱</div>
                   <h3 className="text-2xl font-bold text-purple-800 mb-4">Growing Together!</h3>
                   <p className="text-purple-600 text-lg leading-relaxed">
-                    We're like wise mentors and cheerleaders! We help families grow, 
+                    We&apos;re like wise mentors and cheerleaders! We help families grow, 
                     especially supporting amazing moms and women in our community! 💪
                   </p>
                 </div>
@@ -578,7 +578,7 @@ export default function About() {
                   <div className="text-6xl mb-4 group-hover:animate-spin">🏘️</div>
                   <h3 className="text-2xl font-bold text-orange-800 mb-4">Community Heroes!</h3>
                   <p className="text-orange-600 text-lg">
-                    We're committed to supporting our amazing Navasota community and 
+                    We&apos;re committed to supporting our amazing Navasota community and 
                     all the hardworking families who make it special! 🏆
                   </p>
                 </div>
