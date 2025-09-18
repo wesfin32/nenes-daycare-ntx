@@ -7,6 +7,16 @@ import { useState } from "react";
 export default function Home() {
   const [activeGallery, setActiveGallery] = useState<string | null>(null);
   const [showAllAdventures, setShowAllAdventures] = useState(false);
+  const [galleryOpenedFromAdventures, setGalleryOpenedFromAdventures] = useState(false);
+
+  // Function to handle closing the gallery
+  const handleCloseGallery = () => {
+    setActiveGallery(null);
+    if (galleryOpenedFromAdventures) {
+      setShowAllAdventures(true);
+      setGalleryOpenedFromAdventures(false);
+    }
+  };
 
   // Gallery images for each activity
   const galleryImages = {
@@ -319,7 +329,7 @@ export default function Home() {
       </section>
 
       {/* Key Features - Building Blocks Style */}
-      <section className="py-16 bg-gradient-to-br from-blue-100 via-purple-50 to-pink-100 relative overflow-hidden">
+      <section className="py-16 bg-gradient-to-br from-blue-100 via-yellow-50 to-green-100 relative overflow-hidden">
         {/* Playful floating elements */}
         <div className="absolute top-10 left-10 w-12 h-12 bg-yellow-300 rounded-2xl transform rotate-12 animate-float opacity-70"></div>
         <div className="absolute top-32 right-16 w-8 h-8 bg-green-300 rounded-full animate-float-delayed opacity-70"></div>
@@ -331,11 +341,11 @@ export default function Home() {
             <div className="inline-block bg-white rounded-full p-4 shadow-lg mb-6">
               <div className="text-6xl animate-bounce">🏠</div>
             </div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-purple-800 mb-6">
+            <h2 className="text-4xl lg:text-5xl font-bold text-green-800 mb-6">
               🌈 Why Our Daycare is AMAZING! 🌈
             </h2>
-            <p className="text-2xl text-pink-700 max-w-3xl mx-auto font-bold">
-              ⭐ 14+ Years of Making Kids Happy & Parents Proud! ⭐
+            <p className="text-2xl text-blue-700 max-w-3xl mx-auto font-bold">
+              ⭐ 16+ Years of Making Kids Happy & Parents Proud! ⭐
             </p>
           </div>
           
@@ -473,7 +483,7 @@ export default function Home() {
       {/* Fun & Learning Adventures - Scroll Triggered Stacking */}
       <section className="relative">
         {/* Section Header */}
-        <div className="relative z-10 bg-gradient-to-br from-cyan-300 via-blue-300 to-purple-400 py-16 overflow-hidden">
+        <div className="relative z-10 bg-gradient-to-br from-cyan-300 via-blue-300 to-green-400 py-16 overflow-hidden">
           {/* Scattered fun elements */}
           <div className="absolute top-5 left-10 w-6 h-6 bg-yellow-400 rounded-full"></div>
           <div className="absolute top-20 right-20 w-8 h-8 bg-pink-400 transform rotate-45"></div>
@@ -528,7 +538,10 @@ export default function Home() {
                       
                       <div className="flex justify-start">
                         <button 
-                          onClick={() => setActiveGallery(card.id)}
+                          onClick={() => {
+                            setActiveGallery(card.id);
+                            setGalleryOpenedFromAdventures(false);
+                          }}
                           className={`bg-gradient-to-r ${card.buttonGradient} text-white px-12 py-4 rounded-xl text-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200`}
                         >
                           View Gallery
@@ -546,12 +559,6 @@ export default function Home() {
                         className="object-cover"
                       />
                       
-                      {/* Decorative Elements */}
-                      <div className="absolute top-8 right-8 w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                        </svg>
-                      </div>
                     </div>
                   </div>
 
@@ -566,11 +573,11 @@ export default function Home() {
         </div>
 
         {/* Bottom Button Section */}
-        <div className="bg-gradient-to-br from-purple-50 to-pink-50 py-16">
+        <div className="bg-gradient-to-br from-yellow-50 to-orange-50 py-16">
           <div className="text-center">
             <button 
               onClick={() => setShowAllAdventures(true)}
-              className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-12 py-6 rounded-full text-xl font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-200 shadow-xl transform hover:scale-105 inline-flex items-center gap-3">
+              className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-12 py-6 rounded-full text-xl font-semibold hover:from-blue-700 hover:to-green-700 transition-all duration-200 shadow-xl transform hover:scale-105 inline-flex items-center gap-3">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -581,44 +588,99 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4 drop-shadow-lg">
-            Ready to Join Our Daycare Family?
+      {/* Call to Action - Child-like and Fun */}
+      <section className="bg-gradient-to-b from-yellow-200 via-green-300 to-cyan-300 py-16 relative overflow-hidden">
+        {/* Fun animated elements */}
+        <div className="absolute top-8 left-12 w-16 h-16 bg-yellow-400 rounded-full animate-bounce shadow-lg">
+          <div className="absolute inset-2 bg-yellow-300 rounded-full flex items-center justify-center">
+            <div className="text-2xl">🌟</div>
+          </div>
+        </div>
+        <div className="absolute top-16 right-16 w-12 h-12 bg-green-400 rounded-full animate-pulse shadow-lg">
+          <div className="absolute inset-1 bg-green-300 rounded-full flex items-center justify-center">
+            <div className="text-xl">🎈</div>
+          </div>
+        </div>
+        <div className="absolute bottom-12 left-20 w-14 h-14 bg-orange-400 rounded-full animate-float shadow-lg">
+          <div className="absolute inset-2 bg-orange-300 rounded-full flex items-center justify-center">
+            <div className="text-2xl">🦋</div>
+          </div>
+        </div>
+        <div className="absolute bottom-16 right-24 w-10 h-10 bg-pink-400 rounded-full animate-float-delayed shadow-lg">
+          <div className="absolute inset-1 bg-pink-300 rounded-full flex items-center justify-center">
+            <div className="text-lg">💕</div>
+          </div>
+        </div>
+        
+        {/* Colorful confetti-like shapes */}
+        <div className="absolute top-32 left-1/4 w-6 h-6 bg-red-400 transform rotate-45 animate-float"></div>
+        <div className="absolute top-20 right-1/3 w-4 h-8 bg-blue-400 rounded-full animate-float-delayed"></div>
+        <div className="absolute bottom-32 left-1/3 w-8 h-4 bg-purple-400 transform rotate-12 animate-float"></div>
+        <div className="absolute bottom-20 right-1/4 w-6 h-6 bg-cyan-400 rounded-full animate-bounce"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-r from-red-400 to-pink-500 rounded-full mb-6 shadow-2xl animate-bounce">
+            <div className="text-4xl">🏠</div>
+          </div>
+          <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6 drop-shadow-2xl font-comic">
+            🌈 Ready to Join Our Daycare Family? 🌈
           </h2>
-          <p className="text-xl text-white mb-8 max-w-2xl mx-auto drop-shadow-md">
-            Schedule a tour to see our facilities and meet our caring team. 
-            We&apos;re here to support your family&apos;s childcare needs.
+          <p className="text-2xl text-white mb-8 max-w-3xl mx-auto drop-shadow-lg font-bold">
+            🎯 Come See Our AMAZING Fun House! 🎯<br/>
+            Meet our super caring team & see where the magic happens! ✨
           </p>
           <Link
             href="/contact"
-            className="bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:from-yellow-500 hover:to-orange-500 transition-all duration-200 inline-block shadow-lg transform hover:scale-105"
+            className="bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 text-white px-12 py-6 rounded-full text-2xl font-bold hover:from-yellow-500 hover:via-orange-500 hover:to-red-500 transition-all duration-200 inline-block shadow-2xl transform hover:scale-110 hover:rotate-1 animate-pulse"
           >
-            Schedule Your Tour
+            🎪 Schedule Your Fun Tour! 🎪
           </Link>
         </div>
       </section>
 
-      {/* Quick Stats */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">14+</div>
-              <div className="text-gray-600">Years of Service</div>
+      {/* Quick Stats - Clean and Spacious */}
+      <section className="py-20 bg-gradient-to-b from-blue-50 to-green-50 relative overflow-hidden">
+        {/* Subtle decorative elements */}
+        <div className="absolute top-10 right-10 w-32 h-32 bg-yellow-200 rounded-full opacity-30 blur-2xl"></div>
+        <div className="absolute bottom-10 left-10 w-40 h-40 bg-cyan-200 rounded-full opacity-30 blur-2xl"></div>
+        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-green-200 rounded-full opacity-20 blur-xl"></div>
+        
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mb-6 shadow-lg animate-bounce">
+              <div className="text-3xl">📊</div>
             </div>
-            <div>
-              <div className="text-4xl font-bold text-green-600 mb-2">85%</div>
-              <div className="text-gray-600">Families Using Government Assistance</div>
+            <h3 className="text-4xl font-bold text-gray-800 mb-4">🎯 Our Amazing Numbers! 🎯</h3>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">Here's what makes us special in our community</p>
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 text-center">
+            <div className="group">
+              <div className="bg-gradient-to-br from-blue-400 to-cyan-500 text-white p-8 rounded-3xl shadow-xl transform group-hover:scale-105 transition-all duration-300 mb-4">
+                <div className="text-6xl font-bold mb-2">16+</div>
+              </div>
+              <div className="text-lg font-semibold text-gray-700">Years of Service</div>
+              <div className="text-sm text-gray-500 mt-1">Trusted by families since 2009</div>
             </div>
-            <div>
-              <div className="text-4xl font-bold text-orange-600 mb-2">12</div>
-              <div className="text-gray-600">Hours Daily Care</div>
+            <div className="group">
+              <div className="bg-gradient-to-br from-green-400 to-emerald-500 text-white p-8 rounded-3xl shadow-xl transform group-hover:scale-105 transition-all duration-300 mb-4">
+                <div className="text-6xl font-bold mb-2">85%</div>
+              </div>
+              <div className="text-lg font-semibold text-gray-700">Families We Support</div>
+              <div className="text-sm text-gray-500 mt-1">Using government assistance</div>
             </div>
-            <div>
-              <div className="text-4xl font-bold text-purple-600 mb-2">5</div>
-              <div className="text-gray-600">Age Groups Served</div>
+            <div className="group">
+              <div className="bg-gradient-to-br from-orange-400 to-red-500 text-white p-8 rounded-3xl shadow-xl transform group-hover:scale-105 transition-all duration-300 mb-4">
+                <div className="text-6xl font-bold mb-2">12</div>
+              </div>
+              <div className="text-lg font-semibold text-gray-700">Hours of Care</div>
+              <div className="text-sm text-gray-500 mt-1">Full day coverage for families</div>
+            </div>
+            <div className="group">
+              <div className="bg-gradient-to-br from-purple-400 to-violet-500 text-white p-8 rounded-3xl shadow-xl transform group-hover:scale-105 transition-all duration-300 mb-4">
+                <div className="text-6xl font-bold mb-2">5</div>
+              </div>
+              <div className="text-lg font-semibold text-gray-700">Age Groups</div>
+              <div className="text-sm text-gray-500 mt-1">From infants to school age</div>
             </div>
           </div>
         </div>
@@ -640,7 +702,7 @@ export default function Home() {
                   </p>
                 </div>
                 <button
-                  onClick={() => setActiveGallery(null)}
+                  onClick={handleCloseGallery}
                   className="bg-red-500 hover:bg-red-600 text-white rounded-full p-3 transition-all duration-200 shadow-lg"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -694,7 +756,7 @@ export default function Home() {
                   {galleryImages[activeGallery as keyof typeof galleryImages]?.length} photos
                 </div>
                 <button
-                  onClick={() => setActiveGallery(null)}
+                  onClick={handleCloseGallery}
                   className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full text-sm font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-200"
                 >
                   Close Gallery
@@ -733,7 +795,12 @@ export default function Home() {
                 {allAdventures.map((adventure, index) => (
                   <div
                     key={adventure.id}
-                    className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-purple-300"
+                    onClick={() => {
+                      setShowAllAdventures(false);
+                      setActiveGallery(adventure.id);
+                      setGalleryOpenedFromAdventures(true);
+                    }}
+                    className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-purple-300 cursor-pointer"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     <div className="relative h-40 overflow-hidden">
@@ -744,11 +811,20 @@ export default function Home() {
                         className="object-cover hover:scale-110 transition-transform duration-300"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                      
+                      {/* Click indicator */}
+                      <div className="absolute top-3 right-3 bg-white bg-opacity-90 rounded-full w-8 h-8 flex items-center justify-center">
+                        <svg className="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                      </div>
                     </div>
                     <div className="p-4">
                       <h3 className="text-lg font-bold text-purple-800 text-center leading-tight">
                         {adventure.name}
                       </h3>
+                      <p className="text-sm text-purple-600 text-center mt-2">Click to view gallery</p>
                     </div>
                   </div>
                 ))}
