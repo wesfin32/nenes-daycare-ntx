@@ -56,7 +56,7 @@ export default function About() {
               🌟 Our Magical Story 🌟
             </h2>
             <p className="text-xl text-blue-600 max-w-3xl mx-auto">
-              From a dream to reality - how we became Navasota's favorite daycare family!
+              From a dream to reality - how we became Navasota&apos;s favorite daycare family!
             </p>
           </div>
 
@@ -69,7 +69,7 @@ export default function About() {
                   <h3 className="text-2xl font-bold text-blue-800">Our Humble Beginning</h3>
                 </div>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Once upon a time in April 2009, NeNe's Daycare began as a cozy home daycare! 
+                  Once upon a time in April 2009, NeNe&apos;s Daycare began as a cozy home daycare! 
                   For 13 wonderful years, we welcomed families into our home with love, creating 
                   a warm, family-like environment where children felt safe and cherished! 🌱
                 </p>
@@ -83,7 +83,7 @@ export default function About() {
                 <p className="text-lg text-gray-700 leading-relaxed">
                   In September 2022, we took a big, exciting leap and opened our beautiful childcare center! 
                   This allowed us to welcome even more families and provide enhanced programs while 
-                  keeping the same loving, family atmosphere that makes NeNe's special! ✨
+                  keeping the same loving, family atmosphere that makes NeNe&apos;s special! ✨
                 </p>
               </div>
 
@@ -94,7 +94,7 @@ export default function About() {
                 </div>
                 <p className="text-lg text-gray-700 leading-relaxed">
                   For over 16 amazing years, we've been trusted partners to Navasota families! 
-                  With 85% of our families using government assistance programs, we're committed 
+                  With 85% of our families using government assistance programs, we&apos;re committed 
                   to supporting ALL families, no matter their background. Everyone deserves amazing childcare! 🏆
                 </p>
               </div>
@@ -190,7 +190,7 @@ export default function About() {
               🌟 Meet Our Wonderful Owner! 🌟
             </h2>
             <p className="text-xl text-pink-600 max-w-3xl mx-auto">
-              The heart and soul behind NeNe's Daycare - dedicated to every child's happiness!
+              The heart and soul behind NeNe&apos;s Daycare - dedicated to every child&apos;s happiness!
             </p>
           </div>
 
@@ -233,24 +233,24 @@ export default function About() {
                 <div className="space-y-6">
                   <div className="bg-yellow-50 p-6 rounded-2xl">
                     <p className="text-lg text-gray-700 italic leading-relaxed">
-                      "Welcome to our daycare family! For over 16 years, it has been my absolute joy 
+                      &quot;Welcome to our daycare family! For over 16 years, it has been my absolute joy 
                       to care for the children of Navasota. From starting in my home to opening our 
-                      beautiful center, every day I'm reminded of why I love what I do."
+                      beautiful center, every day I&apos;m reminded of why I love what I do.&quot;
                     </p>
                   </div>
                   
                   <div className="bg-pink-50 p-6 rounded-2xl">
                     <p className="text-lg text-gray-700 leading-relaxed">
-                      "Each child who walks through our doors becomes part of our extended family. 
-                      I'm passionate about creating a safe, nurturing environment where children 
-                      can learn, grow, and most importantly - have fun! 🌈"
+                      &quot;Each child who walks through our doors becomes part of our extended family. 
+                      I&apos;m passionate about creating a safe, nurturing environment where children 
+                      can learn, grow, and most importantly - have fun! 🌈&quot;
                     </p>
                   </div>
 
                   <div className="bg-blue-50 p-6 rounded-2xl">
                     <p className="text-lg text-gray-700 leading-relaxed">
-                      "Thank you for trusting me with your most precious treasures. Together, 
-                      we're building a strong foundation for your child's bright future!"
+                      &quot;Thank you for trusting me with your most precious treasures. Together, 
+                      we&apos;re building a strong foundation for your child&apos;s bright future!&quot;
                     </p>
                     <div className="text-right mt-4">
                       <span className="text-xl text-blue-700 font-bold">- NeNe ❤️</span>
@@ -367,10 +367,10 @@ export default function About() {
             <div className="bg-yellow-200 p-8 rounded-3xl border-4 border-yellow-400 max-w-4xl mx-auto shadow-xl">
               <div className="text-5xl mb-4">🗣️</div>
               <blockquote className="text-2xl lg:text-3xl font-bold text-yellow-800 italic">
-                "Every child is a star, every family is special, and every day is a chance to create magic!" ✨
+                &quot;Every child is a star, every family is special, and every day is a chance to create magic!&quot; ✨
               </blockquote>
               <div className="mt-4 text-lg text-yellow-700 font-semibold">
-                - The NeNe's Daycare Family
+                - The NeNe&apos;s Daycare Family
               </div>
             </div>
           </div>
@@ -467,8 +467,8 @@ export default function About() {
                       <h4 className="text-xl font-bold text-blue-800">Every Family is Special!</h4>
                     </div>
                     <p className="text-blue-600">
-                      Every family's situation is unique and wonderful! Our simple philosophy: 
-                      if you need amazing childcare, we're here to help! 🤗
+                      Every family&apos;s situation is unique and wonderful! Our simple philosophy: 
+                      if you need amazing childcare, we&apos;re here to help! 🤗
                     </p>
                   </div>
                   
@@ -529,7 +529,7 @@ export default function About() {
               🌟 Our Magical Values! 🌟
             </h2>
             <p className="text-xl lg:text-2xl text-purple-100 max-w-4xl mx-auto drop-shadow-md">
-              ✨ These special principles guide everything we do at NeNe's Daycare! ✨
+              ✨ These special principles guide everything we do at NeNe&apos;s Daycare! ✨
             </p>
           </div>
 
@@ -542,8 +542,8 @@ export default function About() {
                   <div className="text-6xl mb-4 group-hover:animate-spin">🛡️</div>
                   <h3 className="text-2xl font-bold text-purple-800 mb-4">Safety First Always!</h3>
                   <p className="text-purple-600 text-lg">
-                    Your precious little one's safety and security is our #1 priority in everything we do! 
-                    We're like protective superheroes! 🦸‍♀️
+                    Your precious little one&apos;s safety and security is our #1 priority in everything we do! 
+                    We&apos;re like protective superheroes! 🦸‍♀️
                   </p>
                 </div>
               </div>
@@ -593,7 +593,7 @@ export default function About() {
                   Ready to Join Our Amazing Family?
                 </h3>
                 <p className="text-xl text-purple-700 mb-6">
-                  Come see why parents and kids LOVE being part of the NeNe's Daycare adventure! 
+                  Come see why parents and kids LOVE being part of the NeNe&apos;s Daycare adventure! 
                   Every day is a new chance to learn, play, and grow together! 🌱
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -59,7 +59,7 @@ export default function Home() {
   };
 
   // Detailed information for each activity
-  const activityInfo = {
+  /* const activityInfo = {
     art: {
       ageGroups: ['Infants (8 weeks - 17 months)', 'Toddlers (18 months - 2.5 years)', 'Pre-K Groups (2.5 - 4.5 years)'],
       benefits: ['Fine motor skill development', 'Creative expression', 'Color and shape recognition', 'Hand-eye coordination'],
@@ -102,7 +102,7 @@ export default function Home() {
       schedule: 'Special events scheduled monthly and for holidays',
       materials: 'Event-specific decorations and celebration supplies'
     }
-  };
+  }; */
 
   // Data for the scroll-stacking cards
   const adventureCards = [
@@ -651,7 +651,7 @@ export default function Home() {
               <div className="text-3xl">📊</div>
             </div>
             <h3 className="text-4xl font-bold text-gray-800 mb-4">🎯 Our Amazing Numbers! 🎯</h3>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">Here's what makes us special in our community</p>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">Here&apos;s what makes us special in our community</p>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 text-center">
             <div className="group">
@@ -776,7 +776,7 @@ export default function Home() {
               <div className="flex justify-between items-center">
                 <div>
                   <h2 className="text-3xl font-bold mb-2">🌟 All Our Amazing Adventures! 🌟</h2>
-                  <p className="text-lg opacity-90">Discover all the fun activities we offer at NeNe's Daycare!</p>
+                  <p className="text-lg opacity-90">Discover all the fun activities we offer at NeNe&apos;s Daycare!</p>
                 </div>
                 <button
                   onClick={() => setShowAllAdventures(false)}
