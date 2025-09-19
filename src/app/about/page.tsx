@@ -1,177 +1,219 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+'use client'
 
-export const metadata: Metadata = {
-  title: "About Us | NeNe&apos;s Daycare Navasota",
-  description: "Learn about NeNe&apos;s Daycare&apos;s 14+ year history, team-based philosophy, and commitment to supporting Navasota families since 2009.",
-};
+import Link from 'next/link'
 
 export default function About() {
   return (
-    <div>
-      {/* Hero Section with Interactive Elements */}
-      <section className="bg-blue-500 py-16 lg:py-24 relative overflow-hidden">
-        {/* Floating Paper Planes */}
-        <div className="absolute top-10 left-10 text-4xl animate-bounce">✈️</div>
-        <div className="absolute top-20 right-20 text-3xl animate-pulse">🎈</div>
-        <div className="absolute bottom-20 left-1/4 text-2xl animate-float">🌟</div>
-        <div className="absolute bottom-10 right-10 text-4xl animate-float-delayed">🦋</div>
+    <div className="min-h-screen">
+      {/* Hero Section - Exact Image10 Recreation */}
+      <section className="relative pt-20 pb-32 overflow-hidden" style={{
+        background: 'linear-gradient(to bottom, #87CEEB 0%, #B6E5FF 40%, #D4F1FF 100%)'
+      }}>
+        {/* Multiple Rolling Hills with Different Slopes */}
+        <div className="absolute bottom-0 left-0 w-full h-full">
+          <svg viewBox="0 0 1200 400" className="w-full h-full" preserveAspectRatio="none">
+            {/* Back hills - gentler slopes */}
+            <path d="M0,300 Q200,260 400,280 Q600,300 800,270 Q1000,240 1200,260 L1200,400 L0,400 Z" fill="#8BC34A" opacity="0.7"/>
+            
+            {/* Middle hills - steeper slopes */}
+            <path d="M0,320 Q100,280 250,300 Q400,320 550,290 Q700,260 850,285 Q1000,310 1200,280 L1200,400 L0,400 Z" fill="#9ACD32" opacity="0.8"/>
+            
+            {/* Front hills - varied dramatic slopes */}
+            <path d="M0,340 Q80,300 180,320 Q280,340 380,315 Q480,290 580,310 Q680,330 780,305 Q880,280 980,300 Q1080,320 1200,295 L1200,400 L0,400 Z" fill="#7CB342"/>
+            
+            {/* Grass texture on front hills */}
+            <path d="M0,340 Q80,300 180,320 Q280,340 380,315 Q480,290 580,310 Q680,330 780,305 Q880,280 980,300 Q1080,320 1200,295 L1200,400 L0,400 Z" fill="url(#grassPattern)" opacity="0.4"/>
+          </svg>
+          
+          {/* Grass texture pattern */}
+          <svg width="0" height="0">
+            <defs>
+              <pattern id="grassPattern" patternUnits="userSpaceOnUse" width="4" height="8">
+                <rect width="4" height="8" fill="#7CB342"/>
+                <line x1="1" y1="0" x2="1" y2="8" stroke="#689F38" strokeWidth="0.5"/>
+                <line x1="3" y1="0" x2="3" y2="8" stroke="#689F38" strokeWidth="0.5"/>
+              </pattern>
+            </defs>
+          </svg>
+        </div>
         
-        {/* Cute Corner Decorations */}
-        <div className="absolute top-0 left-0 w-32 h-32 bg-yellow-400 rounded-br-full opacity-80"></div>
-        <div className="absolute top-0 right-0 w-24 h-24 bg-pink-400 rounded-bl-full opacity-80"></div>
-        <div className="absolute bottom-0 left-0 w-20 h-20 bg-green-400 rounded-tr-full opacity-80"></div>
-        <div className="absolute bottom-0 right-0 w-28 h-28 bg-purple-400 rounded-tl-full opacity-80"></div>
+        {/* Simple sun exactly like image10 */}
+        <div className="absolute top-12 left-16">
+          <div className="w-12 h-12 bg-yellow-300 rounded-full" style={{
+            background: 'radial-gradient(circle, #FFEB3B 40%, #FFC107 100%)'
+          }}></div>
+        </div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <div className="inline-block mb-8">
-            <div className="text-8xl animate-bounce">👨‍👩‍👧‍👦</div>
-          </div>
-          <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
-            🌈 Meet Our Amazing Family! 🌈
-          </h1>
-          <p className="text-xl lg:text-2xl text-white max-w-4xl mx-auto drop-shadow-md">
-            ⭐ 16+ Years of Magic, Laughter & Learning in Navasota! ⭐
-          </p>
-          <div className="mt-8">
-            <div className="inline-block bg-yellow-400 border-4 border-white rounded-full px-8 py-4 text-blue-800 font-bold text-lg shadow-lg">
-              🎉 Serving Families Since April 2009! 🎉
+        {/* Puffy white clouds exactly like image10 */}
+        <div className="absolute top-8 left-32">
+          <svg width="100" height="50" viewBox="0 0 100 50">
+            <ellipse cx="25" cy="30" rx="20" ry="15" fill="white"/>
+            <ellipse cx="45" cy="25" rx="25" ry="18" fill="white"/>
+            <ellipse cx="65" cy="30" rx="20" ry="15" fill="white"/>
+            <ellipse cx="35" cy="15" rx="15" ry="12" fill="white"/>
+            <ellipse cx="55" cy="15" rx="18" ry="14" fill="white"/>
+          </svg>
+        </div>
+        
+        <div className="absolute top-16 right-32">
+          <svg width="80" height="40" viewBox="0 0 80 40">
+            <ellipse cx="20" cy="25" rx="16" ry="12" fill="white"/>
+            <ellipse cx="35" cy="20" rx="20" ry="15" fill="white"/>
+            <ellipse cx="50" cy="25" rx="16" ry="12" fill="white"/>
+            <ellipse cx="30" cy="12" rx="12" ry="10" fill="white"/>
+            <ellipse cx="45" cy="12" rx="15" ry="12" fill="white"/>
+          </svg>
+        </div>
+        
+        <div className="absolute top-6 left-2/3">
+          <svg width="70" height="35" viewBox="0 0 70 35">
+            <ellipse cx="18" cy="22" rx="14" ry="10" fill="white"/>
+            <ellipse cx="30" cy="18" rx="17" ry="13" fill="white"/>
+            <ellipse cx="42" cy="22" rx="14" ry="10" fill="white"/>
+            <ellipse cx="26" cy="10" rx="10" ry="8" fill="white"/>
+            <ellipse cx="36" cy="10" rx="12" ry="10" fill="white"/>
+          </svg>
+        </div>
+        
+        {/* Minimal elements to not clutter the clean design */}
+        <div className="absolute top-28 left-1/4 text-3xl animate-bounce delay-500" style={{animationDuration: '4s'}}>🎈</div>
+        <div className="absolute top-24 right-1/3 text-3xl animate-bounce delay-1000" style={{animationDuration: '3.5s'}}>🎈</div>
+        
+        {/* Kids playing subtly */}
+        <div className="absolute bottom-20 left-1/4 text-2xl animate-bounce delay-300">🧒</div>
+        <div className="absolute bottom-24 right-1/3 text-2xl animate-bounce delay-800">👧</div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center">
+            <div className="text-8xl mb-8">🌈</div>
+            <h1 className="text-5xl lg:text-7xl font-bold text-purple-800 mb-8 leading-tight">
+              About NeNe's Daycare! 🎯
+            </h1>
+            <p className="text-2xl lg:text-3xl text-purple-600 max-w-4xl mx-auto mb-12 leading-relaxed">
+              Where every day is an adventure and every child is a SUPERSTAR! 
+              Come learn about our amazing journey from home to heroes! 🚀✨
+            </p>
+            
+            {/* Fun Stats Preview */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              <div className="bg-white bg-opacity-80 rounded-3xl p-6 shadow-xl transform hover:scale-110 transition-all duration-300">
+                <div className="text-4xl mb-3">🎂</div>
+                <div className="text-3xl font-bold text-pink-800">16+</div>
+                <div className="text-pink-600 font-semibold">Years of Magic</div>
+              </div>
+              <div className="bg-white bg-opacity-80 rounded-3xl p-6 shadow-xl transform hover:scale-110 transition-all duration-300">
+                <div className="text-4xl mb-3">🤝</div>
+                <div className="text-3xl font-bold text-purple-800">85%</div>
+                <div className="text-purple-600 font-semibold">Families Helped</div>
+              </div>
+              <div className="bg-white bg-opacity-80 rounded-3xl p-6 shadow-xl transform hover:scale-110 transition-all duration-300">
+                <div className="text-4xl mb-3">💝</div>
+                <div className="text-3xl font-bold text-blue-800">100%</div>
+                <div className="text-blue-600 font-semibold">Love Always</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Our Story with Timeline */}
-      <section className="py-16 bg-yellow-50 relative overflow-hidden">
-        {/* Decorative Background Elements */}
-        <div className="absolute top-10 left-10 w-16 h-16 bg-pink-300 rounded-full opacity-30 animate-float"></div>
-        <div className="absolute top-32 right-16 w-12 h-12 bg-blue-300 rotate-45 opacity-30 animate-float-delayed"></div>
-        <div className="absolute bottom-20 left-1/3 w-20 h-8 bg-green-300 rounded-full opacity-30 animate-float"></div>
-        
+      {/* Story Timeline - Clean Grid Layout */}
+      <section className="py-20 bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Story Header */}
           <div className="text-center mb-16">
-            <div className="text-6xl mb-4">📖</div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-blue-800 mb-6">
-              🌟 Our Magical Story 🌟
+            <h2 className="text-5xl lg:text-6xl font-bold text-amber-800 mb-6">
+              📖 Our Story Journey 📖
             </h2>
-            <p className="text-xl text-blue-600 max-w-3xl mx-auto">
-              From a dream to reality - how we became Navasota&apos;s favorite daycare family!
+            <p className="text-xl text-amber-700 max-w-3xl mx-auto">
+              From humble beginnings to community heroes - a timeline of love and growth
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Story Content */}
-            <div className="space-y-8">
-              <div className="bg-white p-8 rounded-3xl shadow-xl border-4 border-dashed border-blue-200 transform hover:scale-105 transition-all duration-300">
-                <div className="flex items-center mb-4">
-                  <div className="text-4xl mr-4">🏠</div>
-                  <h3 className="text-2xl font-bold text-blue-800">Our Humble Beginning</h3>
+          {/* Story Timeline Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            
+            {/* Chapter 1: Home Daycare Era */}
+            <div className="bg-white rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 border-4 border-blue-200">
+              <div className="bg-gradient-to-br from-blue-100 to-blue-200 p-8 text-center">
+                <div className="text-6xl mb-4">🏠</div>
+                <h3 className="text-2xl font-bold text-blue-800">Chapter 1</h3>
+                <div className="text-blue-600 font-semibold text-lg">Home Daycare Era</div>
+                <div className="bg-blue-300 text-blue-800 px-4 py-2 rounded-full text-sm font-bold mt-3">
+                  2008 - 2022
                 </div>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  Once upon a time in April 2009, NeNe&apos;s Daycare began as a cozy home daycare! 
-                  For 13 wonderful years, we welcomed families into our home with love, creating 
-                  a warm, family-like environment where children felt safe and cherished! 🌱
-                </p>
               </div>
-
-              <div className="bg-white p-8 rounded-3xl shadow-xl border-4 border-dashed border-green-200 transform hover:scale-105 transition-all duration-300">
-                <div className="flex items-center mb-4">
-                  <div className="text-4xl mr-4">🏢</div>
-                  <h3 className="text-2xl font-bold text-green-800">Our Big Dream</h3>
-                </div>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  In September 2022, we took a big, exciting leap and opened our beautiful childcare center! 
-                  This allowed us to welcome even more families and provide enhanced programs while 
-                  keeping the same loving, family atmosphere that makes NeNe&apos;s special! ✨
+              <div className="p-6">
+                <p className="text-gray-700 leading-relaxed">
+                  It all started with a dream and a loving heart. NeNe opened her doors at home, 
+                  creating a warm, family-like environment where children could learn, play, and grow. 
+                  For 14 amazing years, families trusted us with their most precious gifts.
                 </p>
-              </div>
-
-              <div className="bg-white p-8 rounded-3xl shadow-xl border-4 border-dashed border-purple-200 transform hover:scale-105 transition-all duration-300">
-                <div className="flex items-center mb-4">
-                  <div className="text-4xl mr-4">❤️</div>
-                  <h3 className="text-2xl font-bold text-purple-800">Our Community Love</h3>
+                <div className="mt-4 flex items-center justify-center space-x-2">
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">14 Years</span>
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Home-Based</span>
                 </div>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  For over 16 amazing years, we&apos;ve been trusted partners to Navasota families! 
-                  With 85% of our families using government assistance programs, we&apos;re committed 
-                  to supporting ALL families, no matter their background. Everyone deserves amazing childcare! 🏆
-                </p>
               </div>
             </div>
 
-            {/* Fun Facts Card */}
-            <div className="bg-white p-8 rounded-3xl shadow-2xl border-8 border-yellow-300 relative">
-              {/* Corner Stars */}
-              <div className="absolute -top-3 -left-3 text-3xl">⭐</div>
-              <div className="absolute -top-3 -right-3 text-3xl">⭐</div>
-              <div className="absolute -bottom-3 -left-3 text-3xl">⭐</div>
-              <div className="absolute -bottom-3 -right-3 text-3xl">⭐</div>
-              
-              <div className="text-center mb-6">
-                <div className="text-5xl mb-4">📊</div>
-                <h3 className="text-3xl font-bold text-yellow-600">🎉 Fun Facts About Us! 🎉</h3>
-              </div>
-              
-              <div className="space-y-4">
-                <div className="flex items-center bg-blue-100 p-4 rounded-2xl">
-                  <span className="text-2xl mr-4">🎂</span>
-                  <div>
-                    <span className="font-bold text-blue-800">Founded:</span>
-                    <span className="text-blue-600 ml-2">April 2009</span>
-                  </div>
-                </div>
-                
-                <div className="flex items-center bg-green-100 p-4 rounded-2xl">
-                  <span className="text-2xl mr-4">⏰</span>
-                  <div>
-                    <span className="font-bold text-green-800">Experience:</span>
-                    <span className="text-green-600 ml-2">16+ years of love!</span>
-                  </div>
-                </div>
-                
-                <div className="flex items-center bg-purple-100 p-4 rounded-2xl">
-                  <span className="text-2xl mr-4">🏠</span>
-                  <div>
-                    <span className="font-bold text-purple-800">Home Daycare:</span>
-                    <span className="text-purple-600 ml-2">April 2009 - Sept 2022</span>
-                  </div>
-                </div>
-                
-                <div className="flex items-center bg-orange-100 p-4 rounded-2xl">
-                  <span className="text-2xl mr-4">🏢</span>
-                  <div>
-                    <span className="font-bold text-orange-800">Childcare Center:</span>
-                    <span className="text-orange-600 ml-2">September 2022 - Present</span>
-                  </div>
-                </div>
-                
-                <div className="flex items-center bg-purple-100 p-4 rounded-2xl">
-                  <span className="text-2xl mr-4">👶</span>
-                  <div>
-                    <span className="font-bold text-purple-800">Ages:</span>
-                    <span className="text-purple-600 ml-2">8 weeks to 12 years</span>
-                  </div>
-                </div>
-                
-                <div className="flex items-center bg-orange-100 p-4 rounded-2xl">
-                  <span className="text-2xl mr-4">🕐</span>
-                  <div>
-                    <span className="font-bold text-orange-800">Hours:</span>
-                    <span className="text-orange-600 ml-2">12 hours of daily adventure!</span>
-                  </div>
-                </div>
-                
-                <div className="flex items-center bg-pink-100 p-4 rounded-2xl">
-                  <span className="text-2xl mr-4">🤝</span>
-                  <div>
-                    <span className="font-bold text-pink-800">Support:</span>
-                    <span className="text-pink-600 ml-2">85% families get assistance help!</span>
-                  </div>
+            {/* Chapter 2: Dream Realized */}
+            <div className="bg-white rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 border-4 border-green-200">
+              <div className="bg-gradient-to-br from-green-100 to-green-200 p-8 text-center">
+                <div className="text-6xl mb-4">🏢</div>
+                <h3 className="text-2xl font-bold text-green-800">Chapter 2</h3>
+                <div className="text-green-600 font-semibold text-lg">Big Dream Realized</div>
+                <div className="bg-green-300 text-green-800 px-4 py-2 rounded-full text-sm font-bold mt-3">
+                  September 2022
                 </div>
               </div>
+              <div className="p-6">
+                <p className="text-gray-700 leading-relaxed">
+                  After years of dedication and growing families' trust, NeNe's biggest dream came true! 
+                  We opened our beautiful new center, expanding our daycare family while keeping our 
+                  loving heart. Every corner was designed with children's joy and safety in mind.
+                </p>
+                <div className="mt-4 flex items-center justify-center space-x-2">
+                  <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">New Center</span>
+                  <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Dream Come True</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Chapter 3: Community Heroes */}
+            <div className="bg-white rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 border-4 border-purple-200">
+              <div className="bg-gradient-to-br from-purple-100 to-purple-200 p-8 text-center">
+                <div className="text-6xl mb-4">❤️</div>
+                <h3 className="text-2xl font-bold text-purple-800">Chapter 3</h3>
+                <div className="text-purple-600 font-semibold text-lg">Community Heroes</div>
+                <div className="bg-purple-300 text-purple-800 px-4 py-2 rounded-full text-sm font-bold mt-3">
+                  Today & Beyond
+                </div>
+              </div>
+              <div className="p-6">
+                <p className="text-gray-700 leading-relaxed">
+                  Today, we're proud community heroes! Supporting 85% of families with assistance, 
+                  we believe every child deserves amazing care regardless of circumstances. 
+                  Our journey continues with the same love, just a bigger family to cherish.
+                </p>
+                <div className="mt-4 flex items-center justify-center space-x-2">
+                  <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">85% Assisted</span>
+                  <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Community Heroes</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+          {/* Philosophy Quote */}
+          <div className="text-center">
+            <div className="bg-white rounded-3xl p-8 shadow-xl border-4 border-dashed border-amber-300 max-w-2xl mx-auto">
+              <div className="text-5xl mb-4">✨</div>
+              <blockquote className="text-2xl font-bold text-amber-800 mb-4">
+                "Every child is a star waiting to shine"
+              </blockquote>
+              <div className="text-amber-600 font-semibold">- NeNe's Daycare Philosophy</div>
             </div>
           </div>
+
         </div>
       </section>
 
@@ -190,13 +232,46 @@ export default function About() {
               🌟 Meet Our Wonderful Owner! 🌟
             </h2>
             <p className="text-xl text-pink-600 max-w-3xl mx-auto">
-              The heart and soul behind NeNe&apos;s Daycare - dedicated to every child&apos;s happiness!
+              The heart and soul behind NeNe's Daycare - dedicated to every child's happiness!
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Professional Picture Placeholder */}
-            <div className="relative">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+            {/* Left Side Info */}
+            <div className="flex flex-col justify-center space-y-6 h-full">
+              <div className="bg-white p-6 rounded-3xl shadow-xl border-4 border-dashed border-yellow-300 transform hover:scale-105 transition-all duration-300 flex-1 flex flex-col">
+                <div className="text-center mb-4">
+                  <div className="text-4xl mb-2">💝</div>
+                  <h3 className="text-2xl font-bold text-yellow-700">Welcome Message</h3>
+                </div>
+                
+                <div className="bg-yellow-50 p-4 rounded-2xl flex-1 flex items-center">
+                  <p className="text-base text-gray-700 italic leading-relaxed">
+                    "Welcome to our daycare family! For over 16 years, it has been my absolute joy 
+                    to care for the children of Navasota. From starting in my home to opening our 
+                    beautiful center, every day I'm reminded of why I love what I do."
+                  </p>
+                </div>
+              </div>
+              
+              <div className="bg-white p-6 rounded-3xl shadow-xl border-4 border-dashed border-pink-300 transform hover:scale-105 transition-all duration-300 flex-1 flex flex-col">
+                <div className="text-center mb-4">
+                  <div className="text-4xl mb-2">🌟</div>
+                  <h3 className="text-2xl font-bold text-pink-700">Our Belief</h3>
+                </div>
+                
+                <div className="bg-pink-50 p-4 rounded-2xl flex-1 flex items-center">
+                  <p className="text-base text-gray-700 leading-relaxed">
+                    Every child who walks through our doors becomes part of our family. We believe 
+                    that with love, patience, and encouragement, every child can shine bright like 
+                    the star they are meant to be! 🌟
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Center - Professional Picture */}
+            <div className="flex items-center justify-center">
               <div className="bg-white p-8 rounded-3xl shadow-2xl border-4 border-pink-300 transform hover:scale-105 transition-all duration-300">
                 {/* Picture Frame */}
                 <div className="relative bg-pink-100 rounded-2xl p-8 text-center border-4 border-dashed border-pink-400">
@@ -222,399 +297,136 @@ export default function About() {
               </div>
             </div>
 
-            {/* Owner Bio/Message */}
-            <div className="space-y-8">
-              <div className="bg-white p-8 rounded-3xl shadow-xl border-4 border-dashed border-yellow-300 transform hover:scale-105 transition-all duration-300">
-                <div className="text-center mb-6">
-                  <div className="text-5xl mb-4">💝</div>
-                  <h3 className="text-3xl font-bold text-yellow-700">A Message from NeNe</h3>
+            {/* Right Side Info */}
+            <div className="flex flex-col justify-center space-y-6 h-full">
+              <div className="bg-white p-6 rounded-3xl shadow-xl border-4 border-dashed border-purple-300 transform hover:scale-105 transition-all duration-300 flex-1 flex flex-col">
+                <div className="text-center mb-4">
+                  <div className="text-4xl mb-2">💫</div>
+                  <h3 className="text-2xl font-bold text-purple-700">Our Mission</h3>
                 </div>
                 
-                <div className="space-y-6">
-                  <div className="bg-yellow-50 p-6 rounded-2xl">
-                    <p className="text-lg text-gray-700 italic leading-relaxed">
-                      &quot;Welcome to our daycare family! For over 16 years, it has been my absolute joy 
-                      to care for the children of Navasota. From starting in my home to opening our 
-                      beautiful center, every day I&apos;m reminded of why I love what I do.&quot;
-                    </p>
-                  </div>
-                  
-                  <div className="bg-pink-50 p-6 rounded-2xl">
-                    <p className="text-lg text-gray-700 leading-relaxed">
-                      &quot;Each child who walks through our doors becomes part of our extended family. 
-                      I&apos;m passionate about creating a safe, nurturing environment where children 
-                      can learn, grow, and most importantly - have fun! 🌈&quot;
-                    </p>
-                  </div>
-
-                  <div className="bg-blue-50 p-6 rounded-2xl">
-                    <p className="text-lg text-gray-700 leading-relaxed">
-                      &quot;Thank you for trusting me with your most precious treasures. Together, 
-                      we&apos;re building a strong foundation for your child&apos;s bright future!&quot;
-                    </p>
-                    <div className="text-right mt-4">
-                      <span className="text-xl text-blue-700 font-bold">- NeNe ❤️</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Philosophy with Interactive Cards */}
-      <section className="py-16 bg-white relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-20 text-9xl">🎨</div>
-          <div className="absolute top-40 right-32 text-8xl">📚</div>
-          <div className="absolute bottom-32 left-1/3 text-7xl">🧸</div>
-          <div className="absolute bottom-20 right-20 text-6xl">🎵</div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center mb-16">
-            <div className="text-7xl mb-6">💭</div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-blue-800 mb-6">
-              🌟 Our Super Philosophy! 🌟
-            </h2>
-            <p className="text-xl text-blue-600 max-w-4xl mx-auto">
-              We believe in teamwork, love, and making every day an adventure 
-              that puts children and families first! 🚀
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Team-Based Care */}
-            <div className="group cursor-pointer">
-              <div className="bg-blue-100 p-8 rounded-3xl shadow-lg transform group-hover:scale-110 group-hover:rotate-2 transition-all duration-500 border-4 border-dashed border-blue-300">
-                <div className="text-center">
-                  <div className="text-6xl mb-6 group-hover:animate-bounce">👥</div>
-                  <h3 className="text-2xl font-bold text-blue-800 mb-4">Team-Based Magic!</h3>
-                  <p className="text-blue-600 text-lg leading-relaxed">
-                    Like superheroes working together! Our amazing team makes sure 
-                    every child gets lots of love and attention from multiple caring grown-ups! ⚡
-                  </p>
-                </div>
-                {/* Hidden reveal on hover */}
-                <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="bg-white p-4 rounded-2xl">
-                    <div className="text-center">
-                      <div className="text-2xl mb-2">✨</div>
-                      <p className="text-sm text-blue-700 font-semibold">
-                        Multiple teachers = More fun & learning!
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Parent Partnership */}
-            <div className="group cursor-pointer">
-              <div className="bg-green-100 p-8 rounded-3xl shadow-lg transform group-hover:scale-110 group-hover:-rotate-2 transition-all duration-500 border-4 border-dashed border-green-300">
-                <div className="text-center">
-                  <div className="text-6xl mb-6 group-hover:animate-bounce">❤️</div>
-                  <h3 className="text-2xl font-bold text-green-800 mb-4">Parent Partnership!</h3>
-                  <p className="text-green-600 text-lg leading-relaxed">
-                    Parents are our best friends! We love chatting, sharing stories, 
-                    and building strong friendships with all our daycare families! 🤝
-                  </p>
-                </div>
-                {/* Hidden reveal on hover */}
-                <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="bg-white p-4 rounded-2xl">
-                    <div className="text-center">
-                      <div className="text-2xl mb-2">💬</div>
-                      <p className="text-sm text-green-700 font-semibold">
-                        Open communication every single day!
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Mentorship Approach */}
-            <div className="group cursor-pointer">
-              <div className="bg-purple-100 p-8 rounded-3xl shadow-lg transform group-hover:scale-110 group-hover:rotate-2 transition-all duration-500 border-4 border-dashed border-purple-300">
-                <div className="text-center">
-                  <div className="text-6xl mb-6 group-hover:animate-bounce">🌱</div>
-                  <h3 className="text-2xl font-bold text-purple-800 mb-4">Growing Together!</h3>
-                  <p className="text-purple-600 text-lg leading-relaxed">
-                    We&apos;re like wise mentors and cheerleaders! We help families grow, 
-                    especially supporting amazing moms and women in our community! 💪
-                  </p>
-                </div>
-                {/* Hidden reveal on hover */}
-                <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="bg-white p-4 rounded-2xl">
-                    <div className="text-center">
-                      <div className="text-2xl mb-2">🎯</div>
-                      <p className="text-sm text-purple-700 font-semibold">
-                        Support & guidance beyond just childcare!
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Fun Philosophy Quote */}
-          <div className="mt-16 text-center">
-            <div className="bg-yellow-200 p-8 rounded-3xl border-4 border-yellow-400 max-w-4xl mx-auto shadow-xl">
-              <div className="text-5xl mb-4">🗣️</div>
-              <blockquote className="text-2xl lg:text-3xl font-bold text-yellow-800 italic">
-                &quot;Every child is a star, every family is special, and every day is a chance to create magic!&quot; ✨
-              </blockquote>
-              <div className="mt-4 text-lg text-yellow-700 font-semibold">
-                - The NeNe&apos;s Daycare Family
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Amazing Partnerships & Commitment */}
-      <section className="py-16 bg-green-50 relative overflow-hidden">
-        {/* Fun Background Elements */}
-        <div className="absolute top-10 right-10 w-24 h-24 bg-blue-300 rounded-full opacity-20 animate-ping"></div>
-        <div className="absolute bottom-10 left-10 w-32 h-16 bg-yellow-300 rounded-full opacity-20 animate-pulse"></div>
-        <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-pink-300 rotate-45 opacity-20 animate-float"></div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="text-6xl mb-4">🤝</div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-green-800 mb-6">
-              🌟 Our Super Partners & Promises! 🌟
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Partnerships Card with Flip Effect */}
-            <div className="group perspective-1000">
-              <div className="relative preserve-3d group-hover:rotate-y-180 w-full h-96 transition-transform duration-700">
-                {/* Front of Card */}
-                <div className="absolute inset-0 w-full h-full backface-hidden bg-white p-8 rounded-3xl shadow-2xl border-4 border-green-300">
-                  <div className="text-center">
-                    <div className="text-5xl mb-4">🏆</div>
-                    <h3 className="text-3xl font-bold text-green-800 mb-4">Our Amazing Partners!</h3>
-                    <p className="text-green-600 text-lg mb-6">
-                      We team up with the best organizations to give your kids the most amazing experience!
-                    </p>
-                    <div className="text-green-700 font-semibold">
-                      Hover to see our superhero partners! ✨
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Back of Card */}
-                <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-white p-8 rounded-3xl shadow-2xl border-4 border-green-300">
-                  <div className="h-full flex flex-col justify-center">
-                    <h3 className="text-2xl font-bold text-green-800 mb-6 text-center">🎯 Partnership Power!</h3>
-                    <div className="space-y-4">
-                      <div className="flex items-center bg-blue-100 p-4 rounded-2xl">
-                        <span className="text-2xl mr-4">🐸</span>
-                        <div>
-                          <span className="font-bold text-blue-800">FrogStreet Programs</span>
-                          <p className="text-sm text-blue-600">Educational excellence!</p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-center bg-green-100 p-4 rounded-2xl">
-                        <span className="text-2xl mr-4">👨‍👩‍👧‍👦</span>
-                        <div>
-                          <span className="font-bold text-green-800">CCS Services</span>
-                          <p className="text-sm text-green-600">Child care support!</p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-center bg-purple-100 p-4 rounded-2xl">
-                        <span className="text-2xl mr-4">💼</span>
-                        <div>
-                          <span className="font-bold text-purple-800">Texas Workforce</span>
-                          <p className="text-sm text-purple-600">Career development!</p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-center bg-orange-100 p-4 rounded-2xl">
-                        <span className="text-2xl mr-4">🎒</span>
-                        <div>
-                          <span className="font-bold text-orange-800">Head Start</span>
-                          <p className="text-sm text-orange-600">Early learning boost!</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Commitment Section with Bouncing Elements */}
-            <div className="space-y-8">
-              <div className="bg-white p-8 rounded-3xl shadow-xl border-4 border-dashed border-blue-300 transform hover:scale-105 transition-all duration-300">
-                <div className="text-center mb-6">
-                  <div className="text-5xl mb-4 animate-bounce">💝</div>
-                  <h3 className="text-3xl font-bold text-blue-800">Our Promise to Families!</h3>
-                </div>
-                
-                <div className="space-y-6">
-                  <div className="bg-blue-50 p-6 rounded-2xl">
-                    <div className="flex items-center mb-3">
-                      <span className="text-2xl mr-3">🌈</span>
-                      <h4 className="text-xl font-bold text-blue-800">Every Family is Special!</h4>
-                    </div>
-                    <p className="text-blue-600">
-                      Every family&apos;s situation is unique and wonderful! Our simple philosophy: 
-                      if you need amazing childcare, we&apos;re here to help! 🤗
-                    </p>
-                  </div>
-                  
-                  <div className="bg-green-50 p-6 rounded-2xl">
-                    <div className="flex items-center mb-3">
-                      <span className="text-2xl mr-3">🎪</span>
-                      <h4 className="text-xl font-bold text-green-800">Easy-Peasy Enrollment!</h4>
-                    </div>
-                    <p className="text-green-600">
-                      No complicated rules or criteria! We welcome families from ALL backgrounds 
-                      and work together to support your specific needs! 🌟
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Action Buttons with Animation */}
-              <div className="space-y-4">
-                <Link
-                  href="/enrollment"
-                  className="group block w-full bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-blue-600 transition-all duration-300 text-center shadow-lg transform hover:scale-105 hover:rotate-1"
-                >
-                  <span className="group-hover:animate-bounce inline-block">🎒</span>
-                  {" "}Learn About Our Easy Enrollment!{" "}
-                  <span className="group-hover:animate-bounce inline-block">🎒</span>
-                </Link>
-                
-                <Link
-                  href="/contact"
-                  className="group block w-full border-4 border-blue-500 text-blue-500 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-blue-500 hover:text-white transition-all duration-300 text-center shadow-lg transform hover:scale-105 hover:-rotate-1"
-                >
-                  <span className="group-hover:animate-bounce inline-block">🏠</span>
-                  {" "}Schedule Your Fun Tour!{" "}
-                  <span className="group-hover:animate-bounce inline-block">🏠</span>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Super Values with Stacking Animation */}
-      <section className="py-16 bg-purple-600 relative overflow-hidden">
-        {/* Floating Stars */}
-        <div className="absolute top-5 left-5 text-3xl animate-pulse">⭐</div>
-        <div className="absolute top-10 right-10 text-4xl animate-bounce">✨</div>
-        <div className="absolute bottom-10 left-1/4 text-3xl animate-pulse">🌟</div>
-        <div className="absolute bottom-5 right-5 text-4xl animate-bounce">💫</div>
-        
-        {/* Decorative Shapes */}
-        <div className="absolute top-20 left-20 w-16 h-16 bg-yellow-400 rounded-full opacity-20 animate-float"></div>
-        <div className="absolute bottom-20 right-20 w-20 h-12 bg-pink-400 rounded-full opacity-20 animate-float-delayed"></div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center mb-16">
-            <div className="text-7xl mb-6 animate-bounce">💎</div>
-            <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6 drop-shadow-lg">
-              🌟 Our Magical Values! 🌟
-            </h2>
-            <p className="text-xl lg:text-2xl text-purple-100 max-w-4xl mx-auto drop-shadow-md">
-              ✨ These special principles guide everything we do at NeNe&apos;s Daycare! ✨
-            </p>
-          </div>
-
-          {/* Stacked Value Cards */}
-          <div className="space-y-8">
-            {/* First Row - 2 Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="group bg-white p-8 rounded-3xl shadow-2xl transform hover:scale-110 hover:rotate-3 transition-all duration-500 border-4 border-yellow-300">
-                <div className="text-center">
-                  <div className="text-6xl mb-4 group-hover:animate-spin">🛡️</div>
-                  <h3 className="text-2xl font-bold text-purple-800 mb-4">Safety First Always!</h3>
-                  <p className="text-purple-600 text-lg">
-                    Your precious little one&apos;s safety and security is our #1 priority in everything we do! 
-                    We&apos;re like protective superheroes! 🦸‍♀️
+                <div className="bg-purple-50 p-4 rounded-2xl flex-1 flex items-center">
+                  <p className="text-base text-gray-700 leading-relaxed">
+                    Thank you for trusting us with your most precious gifts. Together, we're not 
+                    just providing childcare - we're nurturing the next generation of amazing humans! 💫
                   </p>
                 </div>
               </div>
               
-              <div className="group bg-white p-8 rounded-3xl shadow-2xl transform hover:scale-110 hover:-rotate-3 transition-all duration-500 border-4 border-green-300">
-                <div className="text-center">
-                  <div className="text-6xl mb-4 group-hover:animate-spin">🌈</div>
-                  <h3 className="text-2xl font-bold text-green-800 mb-4">Everyone is Welcome!</h3>
-                  <p className="text-green-600 text-lg">
-                    We welcome ALL families with open arms - no matter your background or situation! 
-                    Diversity makes us stronger! 🤗
+              <div className="bg-white p-6 rounded-3xl shadow-xl border-4 border-dashed border-blue-300 transform hover:scale-105 transition-all duration-300 flex-1 flex flex-col">
+                <div className="text-center mb-4">
+                  <div className="text-4xl mb-2">🏆</div>
+                  <h3 className="text-2xl font-bold text-blue-700">Experience</h3>
+                </div>
+                
+                <div className="bg-blue-50 p-4 rounded-2xl flex-1 flex items-center">
+                  <p className="text-base text-gray-700 leading-relaxed">
+                    With 16+ years of experience and supporting 85% of families with assistance, 
+                    we've proven our commitment to making quality childcare accessible to all families 
+                    in Navasota.
                   </p>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Second Row - 2 Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="group bg-white p-8 rounded-3xl shadow-2xl transform hover:scale-110 hover:rotate-3 transition-all duration-500 border-4 border-blue-300">
-                <div className="text-center">
-                  <div className="text-6xl mb-4 group-hover:animate-spin">💬</div>
-                  <h3 className="text-2xl font-bold text-blue-800 mb-4">Always Talking!</h3>
-                  <p className="text-blue-600 text-lg">
-                    We love chatting with families every day! Open, honest communication 
-                    keeps our daycare family strong and happy! 📞
-                  </p>
-                </div>
+      {/* Our Philosophy Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 relative overflow-hidden">
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-20 w-16 h-16 bg-yellow-300 rounded-full opacity-30 animate-pulse"></div>
+        <div className="absolute top-40 right-32 w-12 h-12 bg-pink-300 rotate-45 opacity-30 animate-pulse delay-1000"></div>
+        <div className="absolute bottom-32 left-1/3 w-20 h-20 bg-blue-300 rounded-full opacity-30 animate-pulse delay-500"></div>
+        <div className="absolute bottom-20 right-20 w-14 h-14 bg-green-300 rotate-12 opacity-30 animate-pulse delay-1500"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <div className="text-6xl mb-6">🌟</div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-purple-800 mb-6">
+              Our Amazing Philosophy! 
+            </h2>
+            <p className="text-xl text-purple-600 max-w-3xl mx-auto">
+              Everything we do is built on love, respect, and the belief that every child is special! 
+            </p>
+          </div>
+
+          {/* Philosophy Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Core Value 1 */}
+            <div className="bg-white rounded-3xl p-8 shadow-xl border-4 border-blue-200 transform hover:scale-105 transition-all duration-300">
+              <div className="text-center mb-6">
+                <div className="text-5xl mb-4">💖</div>
+                <h3 className="text-2xl font-bold text-blue-800">Love & Care</h3>
               </div>
-              
-              <div className="group bg-white p-8 rounded-3xl shadow-2xl transform hover:scale-110 hover:-rotate-3 transition-all duration-500 border-4 border-orange-300">
-                <div className="text-center">
-                  <div className="text-6xl mb-4 group-hover:animate-spin">🏘️</div>
-                  <h3 className="text-2xl font-bold text-orange-800 mb-4">Community Heroes!</h3>
-                  <p className="text-orange-600 text-lg">
-                    We&apos;re committed to supporting our amazing Navasota community and 
-                    all the hardworking families who make it special! 🏆
-                  </p>
-                </div>
-              </div>
+              <p className="text-gray-700 leading-relaxed text-center">
+                Every child deserves to feel loved, safe, and valued. We create a warm environment 
+                where children can be themselves and grow with confidence.
+              </p>
             </div>
 
-            {/* Special Bottom Message */}
-            <div className="mt-16 text-center">
-              <div className="bg-yellow-400 p-8 rounded-3xl shadow-2xl max-w-4xl mx-auto border-4 border-white transform hover:scale-105 transition-all duration-300">
-                <div className="text-5xl mb-4">🎉</div>
-                <h3 className="text-3xl lg:text-4xl font-bold text-purple-800 mb-4">
-                  Ready to Join Our Amazing Family?
-                </h3>
-                <p className="text-xl text-purple-700 mb-6">
-                  Come see why parents and kids LOVE being part of the NeNe&apos;s Daycare adventure! 
-                  Every day is a new chance to learn, play, and grow together! 🌱
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link
-                    href="/contact"
-                    className="bg-purple-600 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-purple-700 transition-all duration-200 shadow-lg transform hover:scale-110 hover:rotate-2"
-                  >
-                    🏠 Visit Us Today!
-                  </Link>
-                  <Link
-                    href="/enrollment"
-                    className="border-4 border-purple-600 text-purple-600 px-8 py-4 rounded-full text-lg font-bold hover:bg-purple-600 hover:text-white transition-all duration-200 shadow-lg transform hover:scale-110 hover:-rotate-2"
-                  >
-                    🎒 Start Your Journey!
-                  </Link>
-                </div>
+            {/* Core Value 2 */}
+            <div className="bg-white rounded-3xl p-8 shadow-xl border-4 border-green-200 transform hover:scale-105 transition-all duration-300">
+              <div className="text-center mb-6">
+                <div className="text-5xl mb-4">🌱</div>
+                <h3 className="text-2xl font-bold text-green-800">Growth & Learning</h3>
               </div>
+              <p className="text-gray-700 leading-relaxed text-center">
+                Through play, exploration, and gentle guidance, we help children develop their 
+                unique talents and prepare for their bright futures.
+              </p>
+            </div>
+
+            {/* Core Value 3 */}
+            <div className="bg-white rounded-3xl p-8 shadow-xl border-4 border-pink-200 transform hover:scale-105 transition-all duration-300">
+              <div className="text-center mb-6">
+                <div className="text-5xl mb-4">🤝</div>
+                <h3 className="text-2xl font-bold text-pink-800">Community Support</h3>
+              </div>
+              <p className="text-gray-700 leading-relaxed text-center">
+                We believe amazing childcare should be accessible to all families. That's why 
+                85% of our families receive assistance to ensure every child gets the care they deserve.
+              </p>
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center mt-16">
+            <div className="bg-white rounded-3xl p-8 shadow-xl border-4 border-dashed border-yellow-300 max-w-4xl mx-auto">
+              <div className="text-5xl mb-6">🎯</div>
+              <h3 className="text-3xl font-bold text-yellow-700 mb-6">Ready to Join Our Family?</h3>
+              <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+                Come see why families choose NeNe's Daycare! Schedule a visit and discover 
+                where your child will thrive, learn, and shine! ✨
+              </p>
+              <Link 
+                href="/contact" 
+                className="inline-block bg-gradient-to-r from-pink-500 to-purple-600 text-white text-xl font-bold py-4 px-8 rounded-full shadow-lg hover:from-pink-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-300"
+              >
+                Schedule a Visit Today! 🚀
+              </Link>
             </div>
           </div>
         </div>
       </section>
     </div>
-  );
+  )
 }
+
+// Add some custom animations
+const floatAnimation = `
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  @keyframes float-delayed {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+  }
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  .animate-float-delayed {
+    animation: float-delayed 3s ease-in-out infinite 1.5s;
+  }
+`
