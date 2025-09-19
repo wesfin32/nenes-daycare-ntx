@@ -87,7 +87,7 @@ export default function About() {
           <div className="text-center">
             <div className="text-8xl mb-8">🌈</div>
             <h1 className="text-5xl lg:text-7xl font-bold text-purple-800 mb-8 leading-tight">
-              About NeNe's Daycare! 🎯
+              About NeNe&apos;s Daycare! 🎯
             </h1>
             <p className="text-2xl lg:text-3xl text-purple-600 max-w-4xl mx-auto mb-12 leading-relaxed">
               Where every day is an adventure and every child is a SUPERSTAR! 
@@ -166,9 +166,9 @@ export default function About() {
               </div>
               <div className="p-6">
                 <p className="text-gray-700 leading-relaxed">
-                  After years of dedication and growing families' trust, NeNe's biggest dream came true! 
+                  After years of dedication and growing families&apos; trust, NeNe&apos;s biggest dream came true! 
                   We opened our beautiful new center, expanding our daycare family while keeping our 
-                  loving heart. Every corner was designed with children's joy and safety in mind.
+                  loving heart. Every corner was designed with children&apos;s joy and safety in mind.
                 </p>
                 <div className="mt-4 flex items-center justify-center space-x-2">
                   <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">New Center</span>
@@ -189,7 +189,7 @@ export default function About() {
               </div>
               <div className="p-6">
                 <p className="text-gray-700 leading-relaxed">
-                  Today, we're proud community heroes! Supporting 85% of families with assistance, 
+                  Today, we&apos;re proud community heroes! Supporting 85% of families with assistance, 
                   we believe every child deserves amazing care regardless of circumstances. 
                   Our journey continues with the same love, just a bigger family to cherish.
                 </p>
@@ -208,9 +208,9 @@ export default function About() {
             <div className="bg-white rounded-3xl p-8 shadow-xl border-4 border-dashed border-amber-300 max-w-2xl mx-auto">
               <div className="text-5xl mb-4">✨</div>
               <blockquote className="text-2xl font-bold text-amber-800 mb-4">
-                "Every child is a star waiting to shine"
+                &quot;Every child is a star waiting to shine&quot;
               </blockquote>
-              <div className="text-amber-600 font-semibold">- NeNe's Daycare Philosophy</div>
+              <div className="text-amber-600 font-semibold">- NeNe&apos;s Daycare Philosophy</div>
             </div>
           </div>
 
@@ -232,7 +232,7 @@ export default function About() {
               🌟 Meet Our Wonderful Owner! 🌟
             </h2>
             <p className="text-xl text-pink-600 max-w-3xl mx-auto">
-              The heart and soul behind NeNe's Daycare - dedicated to every child's happiness!
+              The heart and soul behind NeNe&apos;s Daycare - dedicated to every child&apos;s happiness!
             </p>
           </div>
 
@@ -247,9 +247,9 @@ export default function About() {
                 
                 <div className="bg-yellow-50 p-4 rounded-2xl flex-1 flex items-center">
                   <p className="text-base text-gray-700 italic leading-relaxed">
-                    "Welcome to our daycare family! For over 16 years, it has been my absolute joy 
+                    &quot;Welcome to our daycare family! For over 16 years, it has been my absolute joy 
                     to care for the children of Navasota. From starting in my home to opening our 
-                    beautiful center, every day I'm reminded of why I love what I do."
+                    beautiful center, every day I&apos;m reminded of why I love what I do.&quot;
                   </p>
                 </div>
               </div>
@@ -307,8 +307,8 @@ export default function About() {
                 
                 <div className="bg-purple-50 p-4 rounded-2xl flex-1 flex items-center">
                   <p className="text-base text-gray-700 leading-relaxed">
-                    Thank you for trusting us with your most precious gifts. Together, we're not 
-                    just providing childcare - we're nurturing the next generation of amazing humans! 💫
+                    Thank you for trusting us with your most precious gifts. Together, we&apos;re not 
+                    just providing childcare - we&apos;re nurturing the next generation of amazing humans! 💫
                   </p>
                 </div>
               </div>
@@ -322,7 +322,7 @@ export default function About() {
                 <div className="bg-blue-50 p-4 rounded-2xl flex-1 flex items-center">
                   <p className="text-base text-gray-700 leading-relaxed">
                     With 16+ years of experience and supporting 85% of families with assistance, 
-                    we've proven our commitment to making quality childcare accessible to all families 
+                    we&apos;ve proven our commitment to making quality childcare accessible to all families 
                     in Navasota.
                   </p>
                 </div>
@@ -384,7 +384,7 @@ export default function About() {
                 <h3 className="text-2xl font-bold text-pink-800">Community Support</h3>
               </div>
               <p className="text-gray-700 leading-relaxed text-center">
-                We believe amazing childcare should be accessible to all families. That's why 
+                We believe amazing childcare should be accessible to all families. That&apos;s why 
                 85% of our families receive assistance to ensure every child gets the care they deserve.
               </p>
             </div>
@@ -396,7 +396,7 @@ export default function About() {
               <div className="text-5xl mb-6">🎯</div>
               <h3 className="text-3xl font-bold text-yellow-700 mb-6">Ready to Join Our Family?</h3>
               <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-                Come see why families choose NeNe's Daycare! Schedule a visit and discover 
+                Come see why families choose NeNe&apos;s Daycare! Schedule a visit and discover 
                 where your child will thrive, learn, and shine! ✨
               </p>
               <Link 
@@ -413,20 +413,3 @@ export default function About() {
   )
 }
 
-// Add some custom animations
-const floatAnimation = `
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-  }
-  @keyframes float-delayed {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-  }
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
-  }
-  .animate-float-delayed {
-    animation: float-delayed 3s ease-in-out infinite 1.5s;
-  }
-`
